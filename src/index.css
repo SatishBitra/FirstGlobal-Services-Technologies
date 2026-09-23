@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #10243a;
+    --brand-blue: #1557c0;
+    --brand-cyan: #20b9df;
+    --brand-teal: #159b8b;
+    --brand-green: #57b957;
+    --surface-soft: #f8fafc;
+    --border-subtle: #e6eaee;
+    --text-primary: #10243a;
+    --text-secondary: #5f6b78;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--brand-navy);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
