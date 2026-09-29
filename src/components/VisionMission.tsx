@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Target, ShieldCheck, HeartHandshake, Sparkles, Cpu, Layers } from 'lucide-react';
+import { ArrowRight, ShieldCheck, HeartHandshake, Sparkles, Cpu, Layers } from 'lucide-react';
 import { motion } from 'motion/react';
 import { TextReveal, ScrollReveal } from './ScrollReveal.tsx';
 
@@ -59,11 +59,7 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
             <div className="h-full rounded-[28px] sm:rounded-[32px] bg-white border border-[#e6eaee] p-8 sm:p-10 lg:p-12 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div>
                 {/* Header Tag */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102a56]/5 text-[#102a56] text-[12px] font-heading font-semibold uppercase tracking-wider">
-                    <Compass size={14} className="text-[#e97824]" />
-                    <span>Our Vision</span>
-                  </div>
+                <div className="flex items-center justify-end mb-8">
                   <span className="text-[12px] font-mono text-[#6f6a61] uppercase tracking-widest">
                     01 / Foundations
                   </span>
@@ -126,11 +122,7 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
             <div className="h-full rounded-[28px] sm:rounded-[32px] bg-gradient-to-br from-[#102a56] via-[#122340] to-[#0c182a] text-white border border-[#1f355c] p-8 sm:p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
               <div>
                 {/* Header Tag */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#fcf9f2] text-[12px] font-heading font-semibold uppercase tracking-wider border border-white/15">
-                    <Target size={14} className="text-[#e97824]" />
-                    <span>Our Mission</span>
-                  </div>
+                <div className="flex items-center justify-end mb-8">
                   <span className="text-[12px] font-mono text-white/50 uppercase tracking-widest">
                     02 / Delivery
                   </span>
