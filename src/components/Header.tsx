@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
               e.currentTarget.src = '/image-84.png';
             }}
             alt="First-Global Services & Technologies"
-            className={`h-8 sm:h-9 md:h-10 w-auto object-contain select-none transition-opacity duration-300 ${
+            className={`h-9 sm:h-10 md:h-12 lg:h-[52px] xl:h-[58px] w-auto object-contain select-none transition-opacity duration-300 ${
               isScrolled ? 'opacity-0 pointer-events-none absolute' : 'opacity-100 relative'
             }`}
           />
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
               e.currentTarget.src = '/image 85.png';
             }}
             alt="First-Global Services & Technologies"
-            className={`h-8 sm:h-9 md:h-10 w-auto object-contain select-none transition-opacity duration-300 ${
+            className={`h-9 sm:h-10 md:h-12 lg:h-[48px] xl:h-[52px] w-auto object-contain select-none transition-opacity duration-300 ${
               isScrolled ? 'opacity-100 relative' : 'opacity-0 pointer-events-none absolute'
             }`}
           />

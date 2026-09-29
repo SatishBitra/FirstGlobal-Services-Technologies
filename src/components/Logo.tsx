@@ -41,8 +41,8 @@ export const Logo: React.FC<LogoProps> = ({
     size === 'sm'
       ? 'h-8 sm:h-9'
       : size === 'lg'
-      ? 'h-11 sm:h-12 md:h-14'
-      : 'h-9 sm:h-10 md:h-11';
+      ? 'h-12 sm:h-14 md:h-16 lg:h-[58px]'
+      : 'h-9 sm:h-10 md:h-12 lg:h-14 xl:h-[52px]';
 
   const src = theme === 'white' ? '/image 84.png' : '/image-85.png';
   const fallback = theme === 'white' ? '/image-84.png' : '/image 85.png';
@@ -55,7 +55,7 @@ export const Logo: React.FC<LogoProps> = ({
           e.currentTarget.src = fallback;
         }}
         alt="FirstGlobal Services & Technologies Private Limited"
-        className={`${heightClass} w-auto max-w-[280px] sm:max-w-[340px] object-contain select-none`}
+        className={`${heightClass} w-auto max-w-[320px] sm:max-w-[400px] object-contain select-none`}
       />
     </div>
   );

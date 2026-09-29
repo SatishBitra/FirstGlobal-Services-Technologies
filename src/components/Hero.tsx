@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section
       id="home"
-      className="relative isolate min-h-[88vh] lg:h-screen lg:min-h-[660px] lg:max-h-[1020px] flex items-center pt-28 sm:pt-32 lg:pt-20 pb-10 sm:pb-12 lg:pb-8 overflow-hidden bg-[#071B3A]"
+      className="relative isolate min-h-[92vh] lg:min-h-screen flex flex-col justify-end pt-32 sm:pt-36 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-[#071B3A]"
       aria-label="First-Global Homepage Hero"
     >
       {/* 1. Immersive Photographic Background with complete visibility */}
@@ -88,9 +88,9 @@ export const Hero: React.FC<HeroProps> = ({
           className="w-full h-full object-cover object-center scale-[1.01] brightness-[0.92] contrast-[1.02]"
         />
 
-        {/* Specified Hero Overlay: 071B3A -> 123E9B -> 00A88A */}
-        <div className="absolute inset-0 hero-overlay pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071B3A]/90 via-black/30 to-black/20 pointer-events-none" />
+        {/* Soft, reduced bottom overlay allowing background photo clarity while maintaining text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071B3A]/60 via-[#071B3A]/20 via-28% to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-black/15 pointer-events-none" />
 
         {/* Subtle Indian Heritage Jali Texture (4-6% opacity) */}
         <div
@@ -116,48 +116,48 @@ export const Hero: React.FC<HeroProps> = ({
         </svg>
       </div>
 
-      <div className="max-w-[1280px] w-full mx-auto px-5 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Left Column: Typography-led messaging & Primary CTA */}
+      <div className="max-w-[1280px] w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          {/* Left Column: Typography-led messaging & Primary CTA, grounded to baseline */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-8 flex flex-col items-start"
           >
-            {/* Top Eyebrow Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white mb-4 shadow-xs">
+            {/* Hierarchy Level 1: Category Eyebrow Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/18 backdrop-blur-md border border-white/25 text-white mb-4 sm:mb-5 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#39C85A] animate-pulse" />
-              <span className="text-[12px] sm:text-[13px] font-heading font-medium tracking-wide">
+              <span className="text-[11.5px] sm:text-[12.5px] font-heading font-medium tracking-wider uppercase">
                 AI-Enabled Service Delivery
               </span>
             </div>
 
-            {/* Display Headline */}
+            {/* Hierarchy Level 2: Display Headline */}
             <h1
               id="hero-primary-headline"
-              className="text-[32px] sm:text-[44px] md:text-[50px] lg:text-[44px] xl:text-[54px] font-heading font-normal tracking-tight text-white leading-[1.12] mb-4 text-balance drop-shadow-sm"
+              className="text-[34px] sm:text-[46px] md:text-[52px] lg:text-[52px] xl:text-[58px] font-heading font-normal tracking-tight text-white leading-[1.08] mb-4 sm:mb-5 text-balance drop-shadow-sm"
             >
               AI-Enabled Service Delivery Marketplace for Rural India.
             </h1>
 
-            {/* Supporting Headline & Narrative Paragraph */}
-            <div className="max-w-2xl mb-6 lg:mb-7">
-              <h2 className="text-[17px] sm:text-[19px] lg:text-[18px] xl:text-[19px] font-heading font-medium text-[#FAF9F5] mb-2 tracking-normal drop-shadow-xs">
+            {/* Hierarchy Level 3: Supporting Headline & Narrative Paragraph */}
+            <div className="max-w-2xl mb-7 sm:mb-8">
+              <h2 className="text-[17px] sm:text-[19px] lg:text-[20px] font-heading font-medium text-[#FAF9F5] mb-2 tracking-normal drop-shadow-xs">
                 Charting Rural India’s Digital Services Future
               </h2>
-              <p className="text-[14.5px] sm:text-[16px] text-white/90 leading-relaxed font-sans text-balance drop-shadow-xs">
+              <p className="text-[14.5px] sm:text-[16px] text-white/88 leading-relaxed font-sans text-balance drop-shadow-xs">
                 Connecting rural communities with trusted local services, empowering village entrepreneurs, and driving inclusive economic growth through intelligent, voice-first digital infrastructure.
               </p>
             </div>
 
-            {/* Primary & Secondary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            {/* Hierarchy Level 4: Action Buttons with Bottom Baseline */}
+            <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
               <button
                 type="button"
                 id="hero-cta-marketplace"
                 onClick={onNavigateToMarketplace}
-                className="btn-gradient-primary group inline-flex items-center gap-2.5 font-heading font-medium text-[14px] sm:text-[15px] px-7 py-3.5 sm:px-8 sm:py-3.5 rounded-full shadow-xl hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AFC7]"
+                className="btn-gradient-primary group inline-flex items-center gap-2.5 font-heading font-medium text-[14.5px] sm:text-[15.5px] px-8 py-3.5 sm:px-9 sm:py-4 rounded-full shadow-xl hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AFC7]"
               >
                 <span>Join the Marketplace</span>
                 <div className="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform group-hover:translate-x-1">
@@ -169,23 +169,23 @@ export const Hero: React.FC<HeroProps> = ({
                 type="button"
                 id="hero-cta-enquiry"
                 onClick={onOpenEnquiry}
-                className="inline-flex items-center gap-2 bg-white/92 hover:bg-white text-[#123E9B] font-heading font-medium text-[14px] sm:text-[15px] px-7 py-3.5 sm:px-8 sm:py-3.5 rounded-full border border-white/60 transition-all shadow-md active:scale-[0.98]"
+                className="inline-flex items-center gap-2 bg-white/92 hover:bg-white text-[#123E9B] font-heading font-medium text-[14.5px] sm:text-[15.5px] px-7 py-3.5 sm:px-8 sm:py-4 rounded-full border border-white/60 transition-all shadow-md active:scale-[0.98]"
               >
                 <span>Partner With Us</span>
               </button>
             </div>
           </motion.div>
 
-          {/* Right Column: Floating Information Card */}
+          {/* Right Column: Floating Information Card, shared bottom alignment */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 flex justify-start lg:justify-end"
+            className="lg:col-span-4 flex justify-start lg:justify-end self-end"
           >
             <div
               id="hero-floating-card"
-              className="relative w-full max-w-sm rounded-[20px] bg-[#FAF9F5]/92 backdrop-blur-md border border-white/70 p-5 sm:p-6 shadow-2xl text-[#12233F] transition-all hover:bg-[#FAF9F5]/98 group"
+              className="relative w-full max-w-sm rounded-[22px] bg-[#FAF9F5]/94 backdrop-blur-md border border-white/75 p-6 sm:p-7 shadow-2xl text-[#12233F] transition-all hover:bg-[#FAF9F5]/98 group"
             >
               {/* Card Header with Category Kicker & Slider Controls */}
               <div className="flex items-center justify-between mb-3.5">

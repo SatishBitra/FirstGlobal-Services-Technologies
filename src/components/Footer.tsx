@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({
                     e.currentTarget.src = '/image-84.png';
                   }}
                   alt="First-Global Services & Technologies"
-                  className="h-8 sm:h-9 md:h-10 w-auto object-contain select-none"
+                  className="h-9 sm:h-10 md:h-12 lg:h-[50px] w-auto object-contain select-none"
                 />
               </div>
 
