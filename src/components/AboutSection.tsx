@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
           {/* Card 1: Rural Indian Community & Households Concept Image */}
           <ScrollReveal direction="up" delay={0.1}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#17202b]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
               <img
                 src="/rc.jpg"
                 onError={(e) => {
@@ -73,7 +73,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center transform group-hover:scale-[1.05] transition-transform duration-700 ease-out brightness-[0.88] contrast-[1.05]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#102a56]/95 via-[#102a56]/75 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="text-[11px] font-heading uppercase tracking-wider text-amber-300 font-semibold">
                   Rural Communities
@@ -118,7 +118,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 3: Local Services Delivery & Village Level Entrepreneur (VLE) Concept Image */}
           <ScrollReveal direction="up" delay={0.3}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#17202b]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
               <img
                 src="/ll.jpg"
                 onError={(e) => {
@@ -129,7 +129,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center transform group-hover:scale-[1.05] transition-transform duration-700 ease-out brightness-[0.88] contrast-[1.05]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#102a56]/95 via-[#102a56]/75 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="text-[11px] font-heading uppercase tracking-wider text-emerald-300 font-semibold">
                   Local Livelihoods
