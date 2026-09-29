@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
-      <div className="min-h-screen bg-white text-[#17202b] flex flex-col font-sans selection:bg-[#e97824]/20 selection:text-[#102a56]">
+      <div className="min-h-screen bg-white text-[#12233F] flex flex-col font-sans selection:bg-[#00AFC7]/25 selection:text-[#071B3A]">
         {/* 1. Navigation — Minimal Floating Nav over Hero (PRD Section 6) */}
         <Header
           onOpenEnquiry={() => setActiveModal('enquiry')}

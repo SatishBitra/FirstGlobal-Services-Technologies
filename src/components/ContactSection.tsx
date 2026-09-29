@@ -53,14 +53,20 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-[#fcf9f2] border-t border-[#e6eaee] relative overflow-hidden" aria-label="Contact FirstGlobal">
-      {/* Background jali pattern */}
-      <div className="absolute inset-0 bg-jali-pattern opacity-30 pointer-events-none" />
+    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-[#FAF9F5] border-t border-[#DDE5E1] relative overflow-hidden" aria-label="Contact FirstGlobal">
+      {/* Background Indian geometric dot texture */}
+      <div className="absolute inset-0 bg-indian-texture opacity-30 pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
-        <div className="rounded-[28px] sm:rounded-[36px] bg-white border border-[#e6eaee] overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 items-stretch">
-          {/* Left Column: Indian Heritage Visual & Company Info (PRD Section 27) */}
-          <div className="lg:col-span-5 relative bg-[#102a56] text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden">
+        <div className="rounded-[28px] sm:rounded-[36px] bg-white border border-[#DDE5E1] overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          {/* Left Column: #071B3A Dark Panel with Dual Radial Glows (Blue + Teal) */}
+          <div
+            style={{
+              background:
+                'radial-gradient(circle at 10% 20%, rgba(23,105,194,0.30), transparent 40%), radial-gradient(circle at 90% 80%, rgba(0,168,138,0.22), transparent 40%), #071B3A',
+            }}
+            className="lg:col-span-5 relative text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden"
+          >
             {/* Background photography */}
             <div className="absolute inset-0 -z-10">
               <img
@@ -71,15 +77,15 @@ export const ContactSection: React.FC = () => {
                 }}
                 alt="Indian heritage architecture and rural ecosystem"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center brightness-[0.4] contrast-[1.1]"
+                className="w-full h-full object-cover object-center brightness-[0.35] contrast-[1.1]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#102a56] via-[#102a56]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071B3A] via-[#071B3A]/85 to-transparent" />
             </div>
 
             <div>
               <ScrollReveal direction="up" delay={0.05}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-[12px] font-heading font-semibold uppercase tracking-wider mb-6 border border-white/20">
-                  <span className="w-2 h-2 rounded-full bg-[#e97824]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-[12px] font-heading font-medium tracking-wide mb-6 border border-white/20">
+                  <span className="w-2 h-2 rounded-full bg-[#39C85A]" />
                   <span>Get in Touch</span>
                 </div>
               </ScrollReveal>
@@ -98,7 +104,7 @@ export const ContactSection: React.FC = () => {
                 <div className="space-y-4 text-[14px] text-white/90">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <Mail size={16} className="text-[#e97824]" />
+                      <Mail size={16} className="text-[#00AFC7]" />
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-white/60">Email Inquiries</p>
@@ -108,7 +114,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <Phone size={16} className="text-[#38bdf8]" />
+                      <Phone size={16} className="text-[#1769C2]" />
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-white/60">Phone Support</p>
@@ -118,7 +124,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <MapPin size={16} className="text-[#4e9f45]" />
+                      <MapPin size={16} className="text-[#39C85A]" />
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-white/60">Headquarters</p>
@@ -136,7 +142,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Form (PRD Section 27) */}
+          {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 bg-white flex flex-col justify-center">
             {submitted ? (
               <motion.div
@@ -144,19 +150,19 @@ export const ContactSection: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-10"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-[#39C85A] flex items-center justify-center mx-auto mb-4 border border-emerald-200">
                   <CheckCircle size={32} />
                 </div>
-                <h3 className="text-[24px] font-heading font-semibold text-[#102a56] mb-2">
+                <h3 className="text-[24px] font-heading font-semibold text-[#123E9B] mb-2">
                   Thank You for Reaching Out
                 </h3>
-                <p className="text-[15px] text-[#6f6a61] max-w-md mx-auto mb-6">
+                <p className="text-[15px] text-[#667085] max-w-md mx-auto mb-6">
                   Your inquiry has been received. Our team will review your area of interest and connect with you shortly.
                 </p>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full bg-[#102a56] text-white text-[14px] font-heading font-medium hover:bg-[#17202b] transition-all"
+                  className="btn-gradient-primary px-6 py-2.5 rounded-full text-white text-[14px] font-heading font-medium"
                 >
                   Send Another Inquiry
                 </button>
@@ -165,10 +171,10 @@ export const ContactSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <ScrollReveal direction="up" delay={0.1}>
                   <div className="mb-4">
-                    <h3 className="text-[22px] sm:text-[24px] font-heading font-semibold text-[#102a56] mb-1">
+                    <h3 className="text-[22px] sm:text-[24px] font-heading font-semibold text-[#123E9B] mb-1">
                       Send an Inquiry
                     </h3>
-                    <p className="text-[13.5px] text-[#6f6a61]">
+                    <p className="text-[13.5px] text-[#667085]">
                       Fill out the fields below and our partner engagement desk will respond within 24 hours.
                     </p>
                   </div>
@@ -177,7 +183,7 @@ export const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-[13px] font-heading font-medium text-[#17202b] mb-1">
+                    <label className="block text-[13px] font-heading font-medium text-[#12233F] mb-1">
                       Full Name *
                     </label>
                     <input
@@ -185,8 +191,8 @@ export const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Ramesh Sharma"
-                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-                        errors.name ? 'border-red-400 bg-red-50/30' : 'border-[#e6eaee] bg-[#fcf9f2]/50'
+                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1769C2] ${
+                        errors.name ? 'border-red-400 bg-red-50/30' : 'border-[#DDE5E1] bg-[#FAF9F5]/60 text-[#12233F]'
                       }`}
                     />
                     {errors.name && <p className="text-[11.5px] text-red-600 mt-1">{errors.name}</p>}
@@ -194,7 +200,7 @@ export const ContactSection: React.FC = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-[13px] font-heading font-medium text-[#17202b] mb-1">
+                    <label className="block text-[13px] font-heading font-medium text-[#12233F] mb-1">
                       Email Address *
                     </label>
                     <input
@@ -202,8 +208,8 @@ export const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="name@organization.com"
-                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-                        errors.email ? 'border-red-400 bg-red-50/30' : 'border-[#e6eaee] bg-[#fcf9f2]/50'
+                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1769C2] ${
+                        errors.email ? 'border-red-400 bg-red-50/30' : 'border-[#DDE5E1] bg-[#FAF9F5]/60 text-[#12233F]'
                       }`}
                     />
                     {errors.email && <p className="text-[11.5px] text-red-600 mt-1">{errors.email}</p>}
@@ -213,7 +219,7 @@ export const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Phone */}
                   <div>
-                    <label className="block text-[13px] font-heading font-medium text-[#17202b] mb-1">
+                    <label className="block text-[13px] font-heading font-medium text-[#12233F] mb-1">
                       Phone Number *
                     </label>
                     <input
@@ -221,8 +227,8 @@ export const ContactSection: React.FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-                        errors.phone ? 'border-red-400 bg-red-50/30' : 'border-[#e6eaee] bg-[#fcf9f2]/50'
+                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1769C2] ${
+                        errors.phone ? 'border-red-400 bg-red-50/30' : 'border-[#DDE5E1] bg-[#FAF9F5]/60 text-[#12233F]'
                       }`}
                     />
                     {errors.phone && <p className="text-[11.5px] text-red-600 mt-1">{errors.phone}</p>}
@@ -230,7 +236,7 @@ export const ContactSection: React.FC = () => {
 
                   {/* Organization */}
                   <div>
-                    <label className="block text-[13px] font-heading font-medium text-[#17202b] mb-1">
+                    <label className="block text-[13px] font-heading font-medium text-[#12233F] mb-1">
                       Organization / Village *
                     </label>
                     <input
@@ -238,8 +244,8 @@ export const ContactSection: React.FC = () => {
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       placeholder="e.g. Gram Panchayat / Enterprise"
-                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-                        errors.organization ? 'border-red-400 bg-red-50/30' : 'border-[#e6eaee] bg-[#fcf9f2]/50'
+                      className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1769C2] ${
+                        errors.organization ? 'border-red-400 bg-red-50/30' : 'border-[#DDE5E1] bg-[#FAF9F5]/60 text-[#12233F]'
                       }`}
                     />
                     {errors.organization && <p className="text-[11.5px] text-red-600 mt-1">{errors.organization}</p>}
@@ -248,7 +254,7 @@ export const ContactSection: React.FC = () => {
 
                 {/* Message / Area of Interest */}
                 <div>
-                  <label className="block text-[13px] font-heading font-medium text-[#17202b] mb-1">
+                  <label className="block text-[13px] font-heading font-medium text-[#12233F] mb-1">
                     Message / Area of Interest *
                   </label>
                   <textarea
@@ -256,18 +262,19 @@ export const ContactSection: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe how you would like to partner with FirstGlobal or services you are looking to deploy..."
-                    className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-                      errors.message ? 'border-red-400 bg-red-50/30' : 'border-[#e6eaee] bg-[#fcf9f2]/50'
+                    className={`w-full px-4 py-3 rounded-xl border text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1769C2] ${
+                      errors.message ? 'border-red-400 bg-red-50/30' : 'border-[#DDE5E1] bg-[#FAF9F5]/60 text-[#12233F]'
                     }`}
                   />
                   {errors.message && <p className="text-[11.5px] text-red-600 mt-1">{errors.message}</p>}
                 </div>
 
+                {/* Primary Button: Green + Blue gradient with animated hover */}
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#102a56] hover:bg-[#17202b] text-white font-heading font-medium text-[14.5px] px-9 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg disabled:opacity-60 active:scale-[0.98]"
+                    className="btn-gradient-primary w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-heading font-medium text-[15px] px-9 py-3.5 rounded-full shadow-md hover:shadow-lg disabled:opacity-60"
                   >
                     <span>{loading ? 'Submitting Inquiry...' : 'Submit Inquiry'}</span>
                     <Send size={15} />

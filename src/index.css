@@ -3,30 +3,55 @@
 
 @layer base {
   :root {
-    /* Core Brand Tokens from PRD */
-    --fg-indigo: #102a56;
-    --fg-blue: #1557c0;
-    --fg-teal: #078f83;
-    --fg-green: #4e9f45;
+    /* Brand - Blue -> Teal -> Green System */
+    --fg-blue-deep: #123E9B;
+    --fg-blue: #1769C2;
+    --fg-cyan: #00AFC7;
+    --fg-teal: #00A88A;
+    --fg-green: #39C85A;
+    --fg-lime: #78D83E;
 
-    /* Indian Heritage Accents */
-    --fg-saffron: #e97824;
-    --fg-turmeric: #d6a62c;
-    --fg-terracotta: #b9573d;
-    --fg-maroon: #6e2635;
+    /* Neutrals */
+    --fg-white: #FFFFFF;
+    --fg-warm-white: #FAF9F5;
+    --fg-surface: #F5F7F4;
+    --fg-border: #DDE5E1;
+    --fg-text: #12233F;
+    --fg-muted: #667085;
 
-    /* Warm Neutrals */
-    --fg-ivory: #fcf9f2;
-    --fg-sand: #e9d7b8;
-    --fg-warm-grey: #6f6a61;
-    --fg-ink: #17202b;
-    --fg-white: #ffffff;
+    /* Dark sections */
+    --fg-dark: #071B3A;
+    --fg-dark-blue: #0B2B5C;
 
-    /* App Surfaces */
-    --surface-soft: #fcf9f2;
-    --border-subtle: #e6eaee;
-    --text-primary: #17202b;
-    --text-secondary: #6f6a61;
+    /* Gradients */
+    --fg-gradient: linear-gradient(
+      120deg,
+      #123E9B 0%,
+      #1769C2 28%,
+      #00AFC7 52%,
+      #00A88A 72%,
+      #39C85A 100%
+    );
+
+    --fg-gradient-soft: linear-gradient(
+      135deg,
+      #EAF3FF 0%,
+      #E8FAF7 52%,
+      #F1FBE8 100%
+    );
+
+    --fg-gradient-dark: linear-gradient(
+      135deg,
+      #071B3A 0%,
+      #123E9B 48%,
+      #006F8F 100%
+    );
+
+    /* Mappings for components */
+    --surface-soft: #FAF9F5;
+    --border-subtle: #DDE5E1;
+    --text-primary: #12233F;
+    --text-secondary: #667085;
   }
 
   html.lenis, html.lenis body {
@@ -46,27 +71,86 @@
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--fg-ink);
-    background-color: #ffffff;
-    selection-background-color: rgba(233, 120, 36, 0.2);
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--fg-text);
+    background-color: #FFFFFF;
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-body {
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-ui, .font-meta {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
 
-/* Subtle Indian Jali / Heritage Weave Background Patterns */
-.bg-jali-pattern {
-  background-image: radial-gradient(#102a56 0.75px, transparent 0.75px), radial-gradient(#e97824 0.75px, #fcf9f2 0.75px);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
+/* Green + Blue Gradient Button with Animated Hover Flow */
+.btn-gradient-primary {
+  background-image: linear-gradient(
+    115deg,
+    #123E9B 0%,
+    #1769C2 28%,
+    #00A88A 65%,
+    #39C85A 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  color: #FFFFFF;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px -2px rgba(18, 62, 155, 0.25), 0 2px 6px -1px rgba(0, 168, 138, 0.15);
 }
 
-.bg-weave-pattern {
-  background-color: #ffffff;
-  background-image: repeating-linear-gradient(45deg, rgba(16, 42, 86, 0.02) 0, rgba(16, 42, 86, 0.02) 1px, transparent 0, transparent 50%),
-                    repeating-linear-gradient(-45deg, rgba(233, 120, 36, 0.02) 0, rgba(233, 120, 36, 0.02) 1px, transparent 0, transparent 50%);
-  background-size: 24px 24px;
+.btn-gradient-primary:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 10px 28px -4px rgba(0, 168, 138, 0.4), 0 4px 14px -2px rgba(23, 105, 194, 0.3);
+  transform: translateY(-1.5px);
 }
+
+.btn-gradient-primary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+
+/* Stat card highlight */
+.stat-card-highlight {
+  background: linear-gradient(
+    135deg,
+    #00A88A,
+    #39C85A
+  );
+  color: #FFFFFF;
+}
+
+/* Marketplace section brand gradient */
+.marketplace-gradient {
+  background: linear-gradient(
+    115deg,
+    #123E9B 0%,
+    #1769C2 35%,
+    #00AFC7 65%,
+    #00A88A 100%
+  );
+}
+
+/* Subtle Indian Rangoli & Kolam Geometric Dot/Grid Texture (3-6% opacity) */
+.bg-indian-texture {
+  background-image: 
+    radial-gradient(#123E9B 0.75px, transparent 0.75px),
+    radial-gradient(#00A88A 0.75px, transparent 0.75px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.bg-indian-weave {
+  background-image: repeating-linear-gradient(45deg, rgba(18, 62, 155, 0.025) 0, rgba(18, 62, 155, 0.025) 1px, transparent 0, transparent 40px),
+                    repeating-linear-gradient(-45deg, rgba(0, 168, 138, 0.025) 0, rgba(0, 168, 138, 0.025) 1px, transparent 0, transparent 40px);
+  background-size: 28px 28px;
+}
+

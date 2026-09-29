@@ -19,7 +19,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
   onReset,
   resetLabel,
   onClose,
-  buttonColorClass = 'bg-black hover:bg-neutral-800',
+  buttonColorClass = 'btn-gradient-primary',
 }) => {
   return (
     <motion.div
@@ -33,7 +33,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
       <div className="relative mb-5 flex items-center justify-center">
         {/* Soft expanding halo ring */}
         <motion.span
-          className="absolute w-20 h-20 rounded-full bg-[#57b957]/20"
+          className="absolute w-20 h-20 rounded-full bg-[#39C85A]/20"
           initial={{ scale: 0.6, opacity: 0.9 }}
           animate={{ scale: 1.45, opacity: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.15 }}
@@ -49,7 +49,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
             damping: 18,
             delay: 0.1,
           }}
-          className="relative w-16 h-16 rounded-full bg-[#57b957]/15 text-[#57b957] flex items-center justify-center shadow-sm"
+          className="relative w-16 h-16 rounded-full bg-[#39C85A]/15 text-[#39C85A] flex items-center justify-center shadow-sm"
         >
           <svg
             className="w-8 h-8"
@@ -62,7 +62,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
           >
             <motion.path
               d="M5 13l4 4L19 7"
-              initial={{ pathLength: 0, opacity: 0 }}
+              initial={{ pathLength: 0, opacity: 1 }}
               animate={{ pathLength: 1, opacity: 1 }}
               transition={{ duration: 0.45, ease: 'easeOut', delay: 0.25 }}
             />
@@ -75,7 +75,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.25 }}
-        className="font-heading font-medium text-[22px] sm:text-[24px] text-[#10243a] mb-2.5"
+        className="font-heading font-medium text-[22px] sm:text-[24px] text-[#123E9B] mb-2.5"
       >
         {title}
       </motion.h4>
@@ -85,7 +85,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.32 }}
-        className="text-[15px] sm:text-[16px] text-[#10243a] max-w-[430px] mb-6 leading-relaxed"
+        className="text-[15px] sm:text-[16px] text-[#12233F] max-w-[430px] mb-6 leading-relaxed"
       >
         {message}
       </motion.p>
@@ -95,14 +95,14 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.38 }}
-        className="bg-[#f8fafc] border border-[#e6eaee] rounded-[12px] p-4 text-[13px] text-[#5f6b78] mb-8 w-full max-w-[420px] text-left flex items-start gap-3 shadow-xs"
+        className="bg-[#FAF9F5] border border-[#DDE5E1] rounded-[12px] p-4 text-[13px] text-[#667085] mb-8 w-full max-w-[420px] text-left flex items-start gap-3 shadow-xs"
       >
-        <Mail size={18} className="text-[#1557c0] shrink-0 mt-0.5" />
+        <Mail size={18} className="text-[#123E9B] shrink-0 mt-0.5" />
         <div>
-          <span className="font-medium text-[#10243a] block">
+          <span className="font-medium text-[#12233F] block">
             Designated Official Email Routing:
           </span>
-          <span className="font-mono text-[12px] text-[#1557c0]">{email}</span>
+          <span className="font-mono text-[12px] text-[#123E9B]">{email}</span>
         </div>
       </motion.div>
 
@@ -116,7 +116,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
         <button
           type="button"
           onClick={onReset}
-          className="flex-1 py-3 px-5 border border-neutral-300 text-neutral-900 text-[14px] font-heading font-medium rounded-full hover:bg-neutral-50 transition-all cursor-pointer shadow-xs"
+          className="flex-1 py-3 px-5 border border-[#DDE5E1] text-[#12233F] text-[14px] font-heading font-medium rounded-full hover:bg-neutral-50 transition-all cursor-pointer shadow-xs"
         >
           {resetLabel}
         </button>

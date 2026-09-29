@@ -217,7 +217,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#10243a]/50 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#071B3A]/60 backdrop-blur-sm animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
       aria-labelledby="apply-modal-title"
@@ -227,21 +227,21 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-[640px] bg-white rounded-[20px] shadow-2xl border border-[#e6eaee] overflow-hidden max-h-[92vh] flex flex-col"
+        className="relative w-full max-w-[640px] bg-white rounded-[20px] shadow-2xl border border-[#DDE5E1] overflow-hidden max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="px-6 sm:px-8 pt-7 pb-5 border-b border-[#e6eaee] flex items-center justify-between bg-white sticky top-0 z-10">
+        <div className="px-6 sm:px-8 pt-7 pb-5 border-b border-[#DDE5E1] flex items-center justify-between bg-white sticky top-0 z-10">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="h-2 w-2 rounded-full bg-[#159b8b]" />
-              <span className="text-[12px] font-heading font-medium uppercase tracking-wider text-[#5f6b78]">
+              <span className="h-2 w-2 rounded-full bg-[#00A88A]" />
+              <span className="text-[12px] font-heading font-medium uppercase tracking-wider text-[#667085]">
                 RISE® Initiative · Leadership &amp; Strategic Roles
               </span>
             </div>
             <h3
               id="apply-modal-title"
-              className="font-heading font-medium text-[24px] sm:text-[26px] text-[#10243a]"
+              className="font-heading font-medium text-[24px] sm:text-[26px] text-[#123E9B]"
             >
               JOIN OUR TEAM
             </h3>
@@ -251,7 +251,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
             type="button"
             onClick={onClose}
             id="close-apply-modal-btn"
-            className="p-2 rounded-full text-[#5f6b78] hover:text-[#10243a] hover:bg-[#f8fafc] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1557c0]"
+            className="p-2 rounded-full text-[#667085] hover:text-[#123E9B] hover:bg-[#FAF9F5] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1769C2]"
             aria-label="Close Join Our Team Form"
           >
             <X size={20} />
@@ -268,22 +268,22 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               resetLabel="Submit Another Profile"
               onReset={handleReset}
               onClose={onClose}
-              buttonColorClass="bg-black hover:bg-neutral-800"
+              buttonColorClass="btn-gradient-primary"
             />
           ) : (
             <form onSubmit={handleSubmit} id="apply-form" className="space-y-4" noValidate>
-              <div className="bg-[#f8fafc] border border-[#e6eaee] rounded-[10px] px-4 py-3 text-[13px] text-[#5f6b78] flex items-center justify-between">
+              <div className="bg-[#FAF9F5] border border-[#DDE5E1] rounded-[10px] px-4 py-3 text-[13px] text-[#667085] flex items-center justify-between">
                 <span>Official Submission Email:</span>
-                <span className="font-medium text-[#1557c0]">contact@first-global.in</span>
+                <span className="font-medium text-[#123E9B]">contact@first-global.in</span>
               </div>
 
               {/* Name */}
               <div>
                 <label
                   htmlFor="apply-name"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Name <span className="text-[#1557c0]">*</span>
+                  Name <span className="text-[#123E9B]">*</span>
                 </label>
                 <input
                   type="text"
@@ -295,8 +295,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'apply-name-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.name ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all`}
+                    errors.name ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all`}
                 />
                 {errors.name && (
                   <p id="apply-name-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -311,9 +311,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 <div>
                   <label
                     htmlFor="apply-email"
-                    className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                    className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                   >
-                    Email Address <span className="text-[#1557c0]">*</span>
+                    Email Address <span className="text-[#123E9B]">*</span>
                   </label>
                   <input
                     type="email"
@@ -325,8 +325,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'apply-email-error' : undefined}
                     className={`w-full px-4 py-3 rounded-[10px] border ${
-                      errors.email ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                    } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all`}
+                      errors.email ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                    } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all`}
                   />
                   {errors.email && (
                     <p id="apply-email-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -339,9 +339,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 <div>
                   <label
                     htmlFor="apply-phone"
-                    className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                    className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                   >
-                    Contact Number <span className="text-[#1557c0]">*</span>
+                    Contact Number <span className="text-[#123E9B]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -353,8 +353,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? 'apply-phone-error' : undefined}
                     className={`w-full px-4 py-3 rounded-[10px] border ${
-                      errors.phone ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                    } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all`}
+                      errors.phone ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                    } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all`}
                   />
                   {errors.phone && (
                     <p id="apply-phone-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -369,7 +369,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               <div>
                 <label
                   htmlFor="apply-linkedin"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
                   LinkedIn / Profile Link
                 </label>
@@ -383,8 +383,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   aria-invalid={!!errors.linkedIn}
                   aria-describedby={errors.linkedIn ? 'apply-linkedin-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.linkedIn ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all`}
+                    errors.linkedIn ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all`}
                 />
                 {errors.linkedIn && (
                   <p id="apply-linkedin-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -398,16 +398,16 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               <div>
                 <label
                   htmlFor="apply-area"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Area of Interest <span className="text-[#1557c0]">*</span>
+                  Area of Interest <span className="text-[#123E9B]">*</span>
                 </label>
                 <select
                   id="apply-area"
                   value={formData.areaOfInterest}
                   onChange={(e) => handleFieldChange('areaOfInterest', e.target.value)}
                   onBlur={() => handleFieldBlur('areaOfInterest')}
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#e6eaee] bg-white text-[15px] text-[#10243a] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border border-[#DDE5E1] bg-white text-[15px] text-[#12233F] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all"
                 >
                   <option value="OPERATIONS">OPERATIONS</option>
                   <option value="TECHNOLOGY">TECHNOLOGY</option>
@@ -421,9 +421,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               <div>
                 <label
                   htmlFor="apply-experience"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Relevant Experience <span className="text-[#1557c0]">*</span>
+                  Relevant Experience <span className="text-[#123E9B]">*</span>
                 </label>
                 <textarea
                   id="apply-experience"
@@ -435,8 +435,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   aria-invalid={!!errors.relevantExperience}
                   aria-describedby={errors.relevantExperience ? 'apply-experience-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.relevantExperience ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all resize-none`}
+                    errors.relevantExperience ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all resize-none`}
                 />
                 {errors.relevantExperience && (
                   <p id="apply-experience-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -450,9 +450,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               <div>
                 <label
                   htmlFor="apply-contribution"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Potential Contribution <span className="text-[#1557c0]">*</span>
+                  Potential Contribution <span className="text-[#123E9B]">*</span>
                 </label>
                 <textarea
                   id="apply-contribution"
@@ -464,8 +464,8 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   aria-invalid={!!errors.potentialContribution}
                   aria-describedby={errors.potentialContribution ? 'apply-contribution-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.potentialContribution ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] transition-all resize-none`}
+                    errors.potentialContribution ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] transition-all resize-none`}
                 />
                 {errors.potentialContribution && (
                   <p id="apply-contribution-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -475,9 +475,9 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 )}
               </div>
 
-              {/* File Upload Mechanism per PRD & User instructions */}
+              {/* File Upload Mechanism */}
               <div>
-                <label className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5">
+                <label className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5">
                   Upload résumé/profile (PDF, DOC, DOCX)
                 </label>
 
@@ -491,16 +491,16 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 />
 
                 {formData.resumeFile ? (
-                  <div className="flex items-center justify-between p-3.5 bg-[#f8fafc] border border-[#e6eaee] rounded-[10px]">
+                  <div className="flex items-center justify-between p-3.5 bg-[#FAF9F5] border border-[#DDE5E1] rounded-[10px]">
                     <div className="flex items-center gap-3 overflow-hidden">
-                      <div className="p-2 bg-white rounded-lg border border-[#e6eaee] text-[#1557c0]">
+                      <div className="p-2 bg-white rounded-lg border border-[#DDE5E1] text-[#123E9B]">
                         <FileText size={20} />
                       </div>
                       <div className="truncate">
-                        <p className="text-[14px] font-medium text-[#10243a] truncate">
+                        <p className="text-[14px] font-medium text-[#12233F] truncate">
                           {formData.resumeFile.name}
                         </p>
-                        <p className="text-[12px] text-[#5f6b78]">
+                        <p className="text-[12px] text-[#667085]">
                           {(formData.resumeFile.size / 1024).toFixed(1)} KB
                         </p>
                       </div>
@@ -508,7 +508,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                     <button
                       type="button"
                       onClick={handleRemoveFile}
-                      className="p-1.5 text-[#5f6b78] hover:text-red-600 hover:bg-white rounded transition-colors"
+                      className="p-1.5 text-[#667085] hover:text-red-600 hover:bg-white rounded transition-colors"
                       title="Remove file"
                       aria-label="Remove uploaded résumé"
                     >
@@ -524,18 +524,18 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                     onClick={() => fileInputRef.current?.click()}
                     className={`border-2 border-dashed rounded-[12px] p-6 text-center cursor-pointer transition-colors ${
                       dragActive
-                        ? 'border-[#1557c0] bg-[#1557c0]/5'
-                        : 'border-[#e6eaee] hover:border-[#1557c0]/50 bg-[#f8fafc]/50'
+                        ? 'border-[#1769C2] bg-[#EAF3FF]'
+                        : 'border-[#DDE5E1] hover:border-[#1769C2]/60 bg-[#FAF9F5]/60'
                     }`}
                   >
                     <div className="flex flex-col items-center justify-center gap-2">
-                      <div className="w-10 h-10 rounded-full bg-white border border-[#e6eaee] flex items-center justify-center text-[#1557c0]">
+                      <div className="w-10 h-10 rounded-full bg-white border border-[#DDE5E1] flex items-center justify-center text-[#123E9B]">
                         <Upload size={18} />
                       </div>
-                      <div className="text-[14px] text-[#10243a]">
-                        <span className="font-heading font-medium text-[#1557c0]">Click to select</span> or drag &amp; drop
+                      <div className="text-[14px] text-[#12233F]">
+                        <span className="font-heading font-medium text-[#123E9B]">Click to select</span> or drag &amp; drop
                       </div>
-                      <div className="text-[12px] text-[#5f6b78]">
+                      <div className="text-[12px] text-[#667085]">
                         PDF, DOC, or DOCX (Max 10MB)
                       </div>
                     </div>
@@ -555,7 +555,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   type="submit"
                   id="apply-submit-btn"
                   disabled={isSubmitting}
-                  className="w-full bg-black hover:bg-neutral-800 disabled:bg-neutral-600 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 active:scale-[0.99]"
+                  className="btn-gradient-primary w-full disabled:opacity-60 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:ring-offset-2"
                 >
                   {isSubmitting ? (
                     <span>Submitting Application...</span>

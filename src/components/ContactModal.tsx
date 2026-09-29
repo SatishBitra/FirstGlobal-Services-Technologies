@@ -129,7 +129,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#10243a]/50 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#071B3A]/60 backdrop-blur-sm animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
       aria-labelledby="enquiry-modal-title"
@@ -139,21 +139,21 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-[560px] bg-white rounded-[20px] shadow-2xl border border-[#e6eaee] overflow-hidden max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-[560px] bg-white rounded-[20px] shadow-2xl border border-[#DDE5E1] overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="px-6 sm:px-8 pt-7 pb-5 border-b border-[#e6eaee] flex items-center justify-between bg-white sticky top-0 z-10">
+        <div className="px-6 sm:px-8 pt-7 pb-5 border-b border-[#DDE5E1] flex items-center justify-between bg-white sticky top-0 z-10">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="h-2 w-2 rounded-full bg-[#1557c0]" />
-              <span className="text-[12px] font-heading font-medium uppercase tracking-wider text-[#5f6b78]">
+              <span className="h-2 w-2 rounded-full bg-[#00A88A]" />
+              <span className="text-[12px] font-heading font-medium uppercase tracking-wider text-[#667085]">
                 FirstGlobal Services
               </span>
             </div>
             <h3
               id="enquiry-modal-title"
-              className="font-heading font-medium text-[24px] sm:text-[26px] text-[#10243a]"
+              className="font-heading font-medium text-[24px] sm:text-[26px] text-[#123E9B]"
             >
               ENQUIRY FORM
             </h3>
@@ -163,7 +163,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             type="button"
             onClick={onClose}
             id="close-enquiry-modal-btn"
-            className="p-2 rounded-full text-[#5f6b78] hover:text-[#10243a] hover:bg-[#f8fafc] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1557c0]"
+            className="p-2 rounded-full text-[#667085] hover:text-[#123E9B] hover:bg-[#FAF9F5] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1769C2]"
             aria-label="Close Enquiry Form"
           >
             <X size={20} />
@@ -180,22 +180,22 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               resetLabel="Send Another Enquiry"
               onReset={handleReset}
               onClose={onClose}
-              buttonColorClass="bg-black hover:bg-neutral-800"
+              buttonColorClass="btn-gradient-primary"
             />
           ) : (
             <form onSubmit={handleSubmit} id="enquiry-form" className="space-y-4" noValidate>
-              <div className="bg-[#f8fafc] border border-[#e6eaee] rounded-[10px] px-4 py-3 text-[13px] text-[#5f6b78] flex items-center justify-between">
+              <div className="bg-[#FAF9F5] border border-[#DDE5E1] rounded-[10px] px-4 py-3 text-[13px] text-[#667085] flex items-center justify-between">
                 <span>Official Submission Email:</span>
-                <span className="font-medium text-[#1557c0]">contact@first-global.in</span>
+                <span className="font-medium text-[#123E9B]">contact@first-global.in</span>
               </div>
 
               {/* Name */}
               <div>
                 <label
                   htmlFor="enquiry-name"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Name <span className="text-[#1557c0]">*</span>
+                  Name <span className="text-[#123E9B]">*</span>
                 </label>
                 <input
                   type="text"
@@ -207,8 +207,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'enquiry-name-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.name ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:border-transparent transition-all`}
+                    errors.name ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:border-transparent transition-all`}
                 />
                 {errors.name && (
                   <p id="enquiry-name-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -223,9 +223,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <div>
                   <label
                     htmlFor="enquiry-email"
-                    className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                    className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                   >
-                    Email <span className="text-[#1557c0]">*</span>
+                    Email <span className="text-[#123E9B]">*</span>
                   </label>
                   <input
                     type="email"
@@ -237,8 +237,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'enquiry-email-error' : undefined}
                     className={`w-full px-4 py-3 rounded-[10px] border ${
-                      errors.email ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                    } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:border-transparent transition-all`}
+                      errors.email ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                    } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:border-transparent transition-all`}
                   />
                   {errors.email && (
                     <p id="enquiry-email-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -251,9 +251,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <div>
                   <label
                     htmlFor="enquiry-phone"
-                    className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                    className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                   >
-                    Phone <span className="text-[#1557c0]">*</span>
+                    Phone <span className="text-[#123E9B]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -265,8 +265,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? 'enquiry-phone-error' : undefined}
                     className={`w-full px-4 py-3 rounded-[10px] border ${
-                      errors.phone ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                    } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:border-transparent transition-all`}
+                      errors.phone ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                    } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:border-transparent transition-all`}
                   />
                   {errors.phone && (
                     <p id="enquiry-phone-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -281,9 +281,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <div>
                 <label
                   htmlFor="enquiry-organization"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Organization <span className="text-[#1557c0]">*</span>
+                  Organization <span className="text-[#123E9B]">*</span>
                 </label>
                 <input
                   type="text"
@@ -295,8 +295,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   aria-invalid={!!errors.organization}
                   aria-describedby={errors.organization ? 'enquiry-organization-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.organization ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:border-transparent transition-all`}
+                    errors.organization ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:border-transparent transition-all`}
                 />
                 {errors.organization && (
                   <p id="enquiry-organization-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -310,9 +310,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <div>
                 <label
                   htmlFor="enquiry-message"
-                  className="block text-[14px] font-heading font-medium text-[#10243a] mb-1.5"
+                  className="block text-[14px] font-heading font-medium text-[#12233F] mb-1.5"
                 >
-                  Message / Area of Interest <span className="text-[#1557c0]">*</span>
+                  Message / Area of Interest <span className="text-[#123E9B]">*</span>
                 </label>
                 <textarea
                   id="enquiry-message"
@@ -324,8 +324,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? 'enquiry-message-error' : undefined}
                   className={`w-full px-4 py-3 rounded-[10px] border ${
-                    errors.message ? 'border-red-400 bg-red-50/20' : 'border-[#e6eaee] bg-white'
-                  } text-[15px] text-[#10243a] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:border-transparent transition-all resize-none`}
+                    errors.message ? 'border-red-400 bg-red-50/20' : 'border-[#DDE5E1] bg-white'
+                  } text-[15px] text-[#12233F] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:border-transparent transition-all resize-none`}
                 />
                 {errors.message && (
                   <p id="enquiry-message-error" className="mt-1 text-[13px] text-red-600 flex items-center gap-1.5">
@@ -341,7 +341,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   type="submit"
                   id="enquiry-submit-btn"
                   disabled={isSubmitting}
-                  className="w-full bg-black hover:bg-neutral-800 disabled:bg-neutral-600 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 active:scale-[0.99]"
+                  className="btn-gradient-primary w-full disabled:opacity-60 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1769C2] focus:ring-offset-2"
                 >
                   {isSubmitting ? (
                     <span>Submitting Enquiry...</span>

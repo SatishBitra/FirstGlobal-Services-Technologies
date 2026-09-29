@@ -19,8 +19,9 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
       icon: Home,
       image: '/hh.jpg',
       badge: 'Direct Beneficiaries',
-      borderColor: 'hover:border-[#e97824]',
-      accentBg: 'bg-[#e97824]',
+      borderColor: 'hover:border-[#F5A623]',
+      accentBg: 'bg-[#F5A623]',
+      accentColor: 'group-hover:text-[#F5A623]',
     },
     {
       id: 2,
@@ -31,8 +32,9 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
       icon: Wrench,
       image: '/lsp.jpg',
       badge: 'Empowered VLEs',
-      borderColor: 'hover:border-[#1557c0]',
-      accentBg: 'bg-[#1557c0]',
+      borderColor: 'hover:border-[#1769C2]',
+      accentBg: 'bg-[#1769C2]',
+      accentColor: 'group-hover:text-[#1769C2]',
     },
     {
       id: 3,
@@ -43,8 +45,9 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
       icon: Building2,
       image: '/ri.jpg',
       badge: 'Institutional Trust',
-      borderColor: 'hover:border-[#078f83]',
-      accentBg: 'bg-[#078f83]',
+      borderColor: 'hover:border-[#00A88A]',
+      accentBg: 'bg-[#00A88A]',
+      accentColor: 'group-hover:text-[#00A88A]',
     },
     {
       id: 4,
@@ -55,22 +58,23 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
       icon: Network,
       image: '/patnerships.jpg',
       badge: 'Open Ecosystem',
-      borderColor: 'hover:border-[#4e9f45]',
-      accentBg: 'bg-[#4e9f45]',
+      borderColor: 'hover:border-[#39C85A]',
+      accentBg: 'bg-[#39C85A]',
+      accentColor: 'group-hover:text-[#39C85A]',
     },
   ];
 
   return (
-    <section id="rise" className="py-20 sm:py-28 lg:py-32 bg-[#ffffff] relative overflow-hidden" aria-label="RISE Initiative">
-      {/* Background jali pattern */}
-      <div className="absolute inset-0 bg-weave-pattern opacity-50 pointer-events-none" />
+    <section id="rise" className="py-20 sm:py-28 lg:py-32 bg-[#FFFFFF] relative overflow-hidden" aria-label="RISE Initiative">
+      {/* Background Indian weave texture */}
+      <div className="absolute inset-0 bg-indian-weave opacity-40 pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (PRD Section 19 & 20) with Text Reveal */}
+        {/* Section Header with Green-Teal Tone */}
         <div className="max-w-3xl mb-14 sm:mb-18">
           <ScrollReveal direction="up" delay={0.05}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#102a56]/5 text-[#102a56] text-[12px] font-heading font-semibold uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#e97824]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A88A]/10 text-[#00A88A] text-[12px] font-heading font-medium tracking-wide mb-4">
+              <span className="w-2 h-2 rounded-full bg-[#00A88A]" />
               <span>FirstGlobal Innovation Initiative</span>
             </div>
           </ScrollReveal>
@@ -78,21 +82,21 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
           <TextReveal
             as="h2"
             text="RISE®"
-            className="text-[34px] sm:text-[46px] md:text-[54px] font-heading font-normal text-[#102a56] tracking-tight leading-[1.1] mb-5"
+            className="text-[34px] sm:text-[46px] md:text-[54px] font-heading font-normal text-[#123E9B] tracking-tight leading-[1.1] mb-5"
           />
 
           <ScrollReveal direction="up" delay={0.15}>
-            <p className="text-[19px] sm:text-[22px] font-heading font-medium text-[#e97824] leading-snug mb-4">
+            <p className="text-[19px] sm:text-[22px] font-heading font-medium text-[#00A88A] leading-snug mb-4">
               Organised, reliable rural service delivery
             </p>
 
-            <p className="text-[15.5px] sm:text-[17px] text-[#6f6a61] leading-relaxed font-sans text-balance">
+            <p className="text-[15.5px] sm:text-[17px] text-[#667085] leading-relaxed font-sans text-balance">
               RISE® is First-Global’s innovation-led initiative that supports the development of organised, reliable rural service delivery. It brings together households, local service providers, institutions, and enabling partners through practical, enterprise-focused models.
             </p>
           </ScrollReveal>
         </div>
 
-        {/* 4 Cards Modular Grid (PRD Section 20, 21, 22) with Scroll Reveal */}
+        {/* 4 Cards Modular Grid with category indicators */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {risePillars.map((pillar, idx) => {
             const Icon = pillar.icon;
@@ -102,10 +106,10 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
                 <div
                   onMouseEnter={() => setActiveCard(pillar.id)}
                   onMouseLeave={() => setActiveCard(null)}
-                  className={`h-full relative rounded-[24px] bg-[#fcf9f2] border border-[#e6eaee] overflow-hidden flex flex-col justify-between p-6 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 ${pillar.borderColor} group`}
+                  className={`h-full relative rounded-[24px] bg-[#FAF9F5] border border-[#DDE5E1] overflow-hidden flex flex-col justify-between p-6 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 ${pillar.borderColor} group`}
                 >
                   {/* Top Image Thumbnail */}
-                  <div className="relative rounded-[16px] overflow-hidden aspect-[16/10] mb-5 bg-[#102a56]/10 shadow-xs">
+                  <div className="relative rounded-[16px] overflow-hidden aspect-[16/10] mb-5 bg-[#071B3A]/10 shadow-xs">
                     <img
                       src={pillar.image}
                       onError={(e) => {
@@ -127,25 +131,25 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
                   {/* Content */}
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
-                      {/* Icon badge without span text beside it per user request */}
+                      {/* Icon badge */}
                       <div className="flex items-center mb-3">
                         <div className={`w-8 h-8 rounded-full ${pillar.accentBg} text-white flex items-center justify-center shadow-xs`}>
                           <Icon size={15} />
                         </div>
                       </div>
 
-                      <h3 className="text-[18px] sm:text-[20px] font-heading font-semibold text-[#102a56] mb-2 leading-snug">
+                      <h3 className="text-[18px] sm:text-[20px] font-heading font-semibold text-[#123E9B] mb-2 leading-snug">
                         {pillar.title}
                       </h3>
 
-                      <p className="text-[13px] sm:text-[14px] text-[#6f6a61] leading-relaxed mb-6 font-sans">
+                      <p className="text-[13px] sm:text-[14px] text-[#667085] leading-relaxed mb-6 font-sans">
                         {pillar.description}
                       </p>
                     </div>
 
                     {/* Bottom Line Connection to RISE */}
-                    <div className="pt-4 border-t border-[#e6eaee] flex items-center justify-between text-[12px] font-heading font-medium text-[#102a56]">
-                      <span className="group-hover:text-[#e97824] transition-colors">{pillar.tagline}</span>
+                    <div className="pt-4 border-t border-[#DDE5E1] flex items-center justify-between text-[12px] font-heading font-medium text-[#123E9B]">
+                      <span className={`${pillar.accentColor} transition-colors`}>{pillar.tagline}</span>
                       <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
@@ -157,10 +161,10 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
 
         {/* Central Ecosystem Synergy Bar */}
         <ScrollReveal direction="up" delay={0.4}>
-          <div className="mt-12 p-6 rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="mt-12 p-6 rounded-[20px] bg-[#FAF9F5] border border-[#DDE5E1] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-              <p className="text-[14px] sm:text-[15px] font-heading font-medium text-[#102a56]">
+              <span className="w-3 h-3 rounded-full bg-[#39C85A] animate-pulse" />
+              <p className="text-[14px] sm:text-[15px] font-heading font-medium text-[#123E9B]">
                 Four pillars connected into one unified sovereign rural platform.
               </p>
             </div>
@@ -168,7 +172,7 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
               <button
                 type="button"
                 onClick={onOpenEnquiry}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#102a56] hover:bg-[#17202b] text-white text-[13.5px] font-heading font-medium transition-all shadow-xs"
+                className="btn-gradient-primary inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-[13.5px] font-heading font-medium"
               >
                 <span>Explore RISE® Collaboration</span>
                 <ArrowRight size={14} />

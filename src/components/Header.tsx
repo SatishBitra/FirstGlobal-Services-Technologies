@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#fcf9f2]/95 backdrop-blur-md border-b border-[#e6eaee] shadow-[0_4px_20px_rgba(16,42,86,0.06)] py-3 sm:py-3.5'
+          ? 'bg-[#FAF9F5]/95 backdrop-blur-md border-b border-[#DDE5E1] shadow-[0_4px_20px_rgba(7,27,58,0.06)] py-3 sm:py-3.5'
           : 'bg-gradient-to-b from-black/60 via-black/30 to-transparent py-4 sm:py-6 text-white'
       }`}
     >
@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({
             e.preventDefault();
             handleNavClick('home');
           }}
-          className="relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e97824] rounded-xl group py-1"
+          className="relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AFC7] rounded-xl group py-1"
           id="header-logo-link"
         >
           {/* White Logo variant for default transparent hero */}
@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
           />
         </a>
 
-        {/* Center: Contact micro-bar & Nav items inspired by Farmora reference */}
+        {/* Center: Nav items */}
         <nav
           className="hidden lg:flex items-center gap-7 text-[14px] font-heading font-medium"
           aria-label="Primary Navigation"
@@ -86,8 +86,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-about"
             onClick={() => handleNavClick('about')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             About
@@ -96,8 +96,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-vision"
             onClick={() => handleNavClick('vision-mission')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             Vision &amp; Mission
@@ -106,8 +106,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-marketplace"
             onClick={() => handleNavClick('marketplace')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             Marketplace
@@ -116,8 +116,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-rise"
             onClick={() => handleNavClick('rise')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             RISE®
@@ -126,8 +126,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-partner"
             onClick={() => handleNavClick('partner')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             Partners
@@ -136,8 +136,8 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-team"
             onClick={() => handleNavClick('team')}
-            className={`transition-colors py-1 hover:text-[#e97824] ${
-              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            className={`transition-colors py-1 hover:text-[#00AFC7] ${
+              isScrolled ? 'text-[#12233F] hover:text-[#1769C2]' : 'text-white/90 hover:text-white'
             }`}
           >
             Careers
@@ -150,10 +150,10 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             id="nav-cta-contact"
             onClick={handleEnquiryClick}
-            className={`group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[13.5px] font-heading font-medium transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e97824] active:scale-[0.98] ${
+            className={`group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[13.5px] font-heading font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AFC7] ${
               isScrolled
-                ? 'bg-[#102a56] hover:bg-[#17202b] text-white'
-                : 'bg-white hover:bg-neutral-100 text-[#102a56]'
+                ? 'btn-gradient-primary text-white'
+                : 'bg-white hover:bg-neutral-100 text-[#123E9B] shadow-sm transition-all duration-200'
             }`}
           >
             <span>Get in Touch</span>
@@ -166,8 +166,8 @@ export const Header: React.FC<HeaderProps> = ({
           type="button"
           id="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`lg:hidden p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
-            isScrolled ? 'text-[#17202b] hover:bg-neutral-100' : 'text-white hover:bg-white/10'
+          className={`lg:hidden p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00AFC7] ${
+            isScrolled ? 'text-[#12233F] hover:bg-neutral-100' : 'text-white hover:bg-white/10'
           }`}
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle Navigation Menu"
@@ -185,55 +185,55 @@ export const Header: React.FC<HeaderProps> = ({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden bg-[#fcf9f2] border-b border-[#e6eaee] px-6 py-6 shadow-xl text-[#17202b]"
+            className="lg:hidden bg-[#FAF9F5] border-b border-[#DDE5E1] px-6 py-6 shadow-xl text-[#12233F]"
           >
             <div className="flex flex-col space-y-3 font-heading font-medium text-[15px]">
               <button
                 type="button"
                 onClick={() => handleNavClick('home')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 Home
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('about')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 About Us
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('vision-mission')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 Vision &amp; Mission
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('marketplace')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 Marketplace
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('rise')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 RISE® Initiative
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('partner')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 Partner With Us
               </button>
               <button
                 type="button"
                 onClick={() => handleNavClick('team')}
-                className="text-left py-2 border-b border-neutral-200/60"
+                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
               >
                 Careers
               </button>
@@ -241,7 +241,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={handleEnquiryClick}
-                className="w-full mt-3 bg-[#102a56] hover:bg-[#17202b] text-white py-3.5 rounded-full text-center shadow-md font-medium"
+                className="w-full mt-3 btn-gradient-primary text-white py-3.5 rounded-full text-center shadow-md font-medium"
               >
                 Get in Touch
               </button>
