@@ -268,7 +268,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               resetLabel="Submit Another Profile"
               onReset={handleReset}
               onClose={onClose}
-              buttonColorClass="bg-[#10243a] hover:bg-[#1557c0]"
+              buttonColorClass="bg-black hover:bg-neutral-800"
             />
           ) : (
             <form onSubmit={handleSubmit} id="apply-form" className="space-y-4" noValidate>
@@ -555,7 +555,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   type="submit"
                   id="apply-submit-btn"
                   disabled={isSubmitting}
-                  className="w-full bg-[#10243a] hover:bg-[#1557c0] disabled:bg-[#10243a]/70 text-white font-heading font-medium text-[16px] py-4 rounded-[12px] transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:ring-offset-2"
+                  className="w-full bg-black hover:bg-neutral-800 disabled:bg-neutral-600 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 active:scale-[0.99]"
                 >
                   {isSubmitting ? (
                     <span>Submitting Application...</span>

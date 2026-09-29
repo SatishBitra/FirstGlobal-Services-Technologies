@@ -19,7 +19,7 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
   onReset,
   resetLabel,
   onClose,
-  buttonColorClass = 'bg-[#1557c0] hover:bg-[#10243a]',
+  buttonColorClass = 'bg-black hover:bg-neutral-800',
 }) => {
   return (
     <motion.div
@@ -116,14 +116,14 @@ export const SubmissionSuccess: React.FC<SubmissionSuccessProps> = ({
         <button
           type="button"
           onClick={onReset}
-          className="flex-1 py-3 px-5 border border-[#e6eaee] text-[#10243a] text-[14px] font-heading font-medium rounded-[10px] hover:bg-[#f8fafc] hover:border-[#cbd5e1] transition-all cursor-pointer"
+          className="flex-1 py-3 px-5 border border-neutral-300 text-neutral-900 text-[14px] font-heading font-medium rounded-full hover:bg-neutral-50 transition-all cursor-pointer shadow-xs"
         >
           {resetLabel}
         </button>
         <button
           type="button"
           onClick={onClose}
-          className={`flex-1 py-3 px-5 ${buttonColorClass} text-white text-[14px] font-heading font-medium rounded-[10px] transition-all shadow-xs cursor-pointer`}
+          className={`flex-1 py-3 px-5 ${buttonColorClass} text-white text-[14px] font-heading font-medium rounded-full transition-all shadow-sm cursor-pointer`}
         >
           Close
         </button>

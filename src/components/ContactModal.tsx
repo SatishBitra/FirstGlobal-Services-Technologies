@@ -180,7 +180,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               resetLabel="Send Another Enquiry"
               onReset={handleReset}
               onClose={onClose}
-              buttonColorClass="bg-[#1557c0] hover:bg-[#10243a]"
+              buttonColorClass="bg-black hover:bg-neutral-800"
             />
           ) : (
             <form onSubmit={handleSubmit} id="enquiry-form" className="space-y-4" noValidate>
@@ -341,7 +341,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   type="submit"
                   id="enquiry-submit-btn"
                   disabled={isSubmitting}
-                  className="w-full bg-[#1557c0] hover:bg-[#10243a] disabled:bg-[#1557c0]/70 text-white font-heading font-medium text-[16px] py-4 rounded-[12px] transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1557c0] focus:ring-offset-2"
+                  className="w-full bg-black hover:bg-neutral-800 disabled:bg-neutral-600 text-white font-heading font-medium text-[15px] sm:text-[16px] py-4 rounded-full transition-colors flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 active:scale-[0.99]"
                 >
                   {isSubmitting ? (
                     <span>Submitting Enquiry...</span>

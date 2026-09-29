@@ -1,24 +1,72 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 @layer base {
   :root {
-    --brand-navy: #10243a;
-    --brand-blue: #1557c0;
-    --brand-cyan: #20b9df;
-    --brand-teal: #159b8b;
-    --brand-green: #57b957;
-    --surface-soft: #f8fafc;
+    /* Core Brand Tokens from PRD */
+    --fg-indigo: #102a56;
+    --fg-blue: #1557c0;
+    --fg-teal: #078f83;
+    --fg-green: #4e9f45;
+
+    /* Indian Heritage Accents */
+    --fg-saffron: #e97824;
+    --fg-turmeric: #d6a62c;
+    --fg-terracotta: #b9573d;
+    --fg-maroon: #6e2635;
+
+    /* Warm Neutrals */
+    --fg-ivory: #fcf9f2;
+    --fg-sand: #e9d7b8;
+    --fg-warm-grey: #6f6a61;
+    --fg-ink: #17202b;
+    --fg-white: #ffffff;
+
+    /* App Surfaces */
+    --surface-soft: #fcf9f2;
     --border-subtle: #e6eaee;
-    --text-primary: #10243a;
-    --text-secondary: #5f6b78;
+    --text-primary: #17202b;
+    --text-secondary: #6f6a61;
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--brand-navy);
+    color: var(--fg-ink);
+    background-color: #ffffff;
+    selection-background-color: rgba(233, 120, 36, 0.2);
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
+}
+
+/* Subtle Indian Jali / Heritage Weave Background Patterns */
+.bg-jali-pattern {
+  background-image: radial-gradient(#102a56 0.75px, transparent 0.75px), radial-gradient(#e97824 0.75px, #fcf9f2 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.bg-weave-pattern {
+  background-color: #ffffff;
+  background-image: repeating-linear-gradient(45deg, rgba(16, 42, 86, 0.02) 0, rgba(16, 42, 86, 0.02) 1px, transparent 0, transparent 50%),
+                    repeating-linear-gradient(-45deg, rgba(233, 120, 36, 0.02) 0, rgba(233, 120, 36, 0.02) 1px, transparent 0, transparent 50%);
+  background-size: 24px 24px;
 }

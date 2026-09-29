@@ -1,86 +1,192 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { ArrowRight, Compass, Target, ShieldCheck, HeartHandshake, Sparkles, Cpu, Layers } from 'lucide-react';
+import { motion } from 'motion/react';
+import { TextReveal, ScrollReveal } from './ScrollReveal.tsx';
 
-export const VisionMission: React.FC = () => {
+interface VisionMissionProps {
+  onNavigateToSection?: (sectionId: string) => void;
+}
+
+export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSection }) => {
+  const handleScrollTo = (id: string) => {
+    if (onNavigateToSection) {
+      onNavigateToSection(id);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 85;
+      const elPos = el.getBoundingClientRect().top;
+      const targetPos = elPos + window.pageYOffset - offset;
+      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="vision-mission"
-      className="py-16 md:py-24 bg-[#f8fafc] border-y border-[#e6eaee] overflow-hidden"
+      className="py-20 sm:py-24 lg:py-32 bg-[#fcf9f2] border-t border-[#e6eaee] relative overflow-hidden"
       aria-label="Vision and Mission"
     >
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Vision Block */}
-          <motion.div
-            id="vision-block"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col justify-between bg-white rounded-[16px] p-6 sm:p-10 border border-[#e6eaee] relative overflow-hidden shadow-sm"
-          >
-            {/* Top brand accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1557c0] to-[#20b9df]" />
+      {/* Background jali pattern */}
+      <div className="absolute inset-0 bg-jali-pattern opacity-30 pointer-events-none" />
 
-            <div>
-              <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
-                <span className="text-[11px] sm:text-[12px] font-heading font-medium uppercase tracking-widest text-[#1557c0]">
-                  Vision
-                </span>
-              </div>
-
-              <h3 className="font-heading font-medium text-[20px] sm:text-[26px] md:text-[30px] leading-[1.25] text-[#10243a] mb-3 sm:mb-5">
-                Trusted Rural Services Ecosystem
-              </h3>
-
-              <p className="text-[14px] sm:text-[16px] md:text-[17px] leading-[1.65] text-[#5f6b78]">
-                To be the most trusted ecosystem transforming rural service delivery.
-              </p>
-            </div>
-
-            {/* Card Category Indicator */}
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#f1f5f9] flex items-center justify-between">
-              <span className="text-[12px] sm:text-[13px] font-heading font-medium text-[#10243a]/70">
-                Foundational Ecosystem
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Section Header with Scroll Text Reveal */}
+        <div className="max-w-2xl mb-12 sm:mb-16">
+          <ScrollReveal direction="up" delay={0.05}>
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 rounded-full bg-[#1557c0]" />
+              <span className="text-[12.5px] font-heading font-semibold uppercase tracking-wider text-[#6f6a61]">
+                Purpose &amp; Foundations
               </span>
             </div>
-          </motion.div>
+          </ScrollReveal>
 
-          {/* Mission Statement Block */}
-          <motion.div
-            id="mission-block"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col justify-between bg-white rounded-[16px] p-6 sm:p-10 border border-[#e6eaee] relative overflow-hidden shadow-sm"
-          >
-            {/* Top brand accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#159b8b] to-[#57b957]" />
+          <TextReveal
+            as="h2"
+            text="Guided by Purpose. Rooted in Trust."
+            className="text-[32px] sm:text-[42px] md:text-[48px] font-heading font-normal text-[#102a56] tracking-tight leading-[1.12]"
+            highlightWords={['Trust.', 'Purpose.']}
+            highlightClass="text-[#102a56]"
+          />
+        </div>
 
-            <div>
-              <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
-                <span className="text-[11px] sm:text-[12px] font-heading font-medium uppercase tracking-widest text-[#159b8b]">
-                  Mission Statement
-                </span>
+        {/* Vision & Mission Cards Stacked Side by Side with No Image (User Request) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {/* 1. Vision Card (Light Editorial Canvas) */}
+          <ScrollReveal direction="up" delay={0.1} className="h-full">
+            <div className="h-full rounded-[28px] sm:rounded-[32px] bg-white border border-[#e6eaee] p-8 sm:p-10 lg:p-12 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                {/* Header Tag */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102a56]/5 text-[#102a56] text-[12px] font-heading font-semibold uppercase tracking-wider">
+                    <Compass size={14} className="text-[#e97824]" />
+                    <span>Our Vision</span>
+                  </div>
+                  <span className="text-[12px] font-mono text-[#6f6a61] uppercase tracking-widest">
+                    01 / Foundations
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-[26px] sm:text-[32px] font-heading font-normal text-[#102a56] leading-[1.18] mb-5 tracking-tight">
+                  Trusted Rural Services Ecosystem
+                </h3>
+
+                {/* Primary Statement */}
+                <p className="text-[16.5px] sm:text-[18px] text-[#17202b] font-heading font-medium leading-relaxed mb-6 font-sans">
+                  To be the most trusted ecosystem transforming rural service delivery across India.
+                </p>
+
+                <p className="text-[14px] sm:text-[15px] text-[#6f6a61] leading-relaxed mb-8 font-sans">
+                  Bridging the last-mile divide by combining community empathy with sovereign intelligence, ensuring dignified services reach every doorstep.
+                </p>
+
+                {/* Pillars Breakdown */}
+                <div className="space-y-3.5 pt-6 border-t border-[#e6eaee] mb-8">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#e97824]/10 text-[#e97824] flex items-center justify-center shrink-0 mt-0.5">
+                      <ShieldCheck size={14} />
+                    </div>
+                    <div>
+                      <p className="text-[13.5px] font-heading font-semibold text-[#102a56]">Sovereign Infrastructure</p>
+                      <p className="text-[12.5px] text-[#6f6a61] leading-relaxed">Built for resilience and open community governance.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#1557c0]/10 text-[#1557c0] flex items-center justify-center shrink-0 mt-0.5">
+                      <HeartHandshake size={14} />
+                    </div>
+                    <div>
+                      <p className="text-[13.5px] font-heading font-semibold text-[#102a56]">Grassroots Trust</p>
+                      <p className="text-[12.5px] text-[#6f6a61] leading-relaxed">Empowering 800M+ citizens across rural Bharat.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <h3 className="font-heading font-medium text-[20px] sm:text-[26px] md:text-[30px] leading-[1.25] text-[#10243a] mb-3 sm:mb-5">
-                Connecting Services &amp; Opportunities Digitally
-              </h3>
-
-              <p className="text-[14px] sm:text-[16px] md:text-[17px] leading-[1.65] text-[#5f6b78]">
-                To build technologyenabled, partnership  driven platforms that connect households with reliable local service providers, improve service access, and expand inclusive economic opportunities.
-              </p>
+              {/* Bottom CTA */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => handleScrollTo('marketplace')}
+                  className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#102a56] hover:bg-[#17202b] text-white text-[13.5px] font-heading font-medium transition-all shadow-sm active:scale-[0.98]"
+                >
+                  <span>Explore the Marketplace</span>
+                  <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
+                </button>
+              </div>
             </div>
+          </ScrollReveal>
 
-            {/* Card Category Indicator */}
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#f1f5f9] flex items-center justify-between">
-              <span className="text-[12px] sm:text-[13px] font-heading font-medium text-[#10243a]/70">
-                Digital &amp; Partnership Platforms
-              </span>
+          {/* 2. Mission Card (Deep Indigo Canvas) */}
+          <ScrollReveal direction="up" delay={0.2} className="h-full">
+            <div className="h-full rounded-[28px] sm:rounded-[32px] bg-gradient-to-br from-[#102a56] via-[#122340] to-[#0c182a] text-white border border-[#1f355c] p-8 sm:p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                {/* Header Tag */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#fcf9f2] text-[12px] font-heading font-semibold uppercase tracking-wider border border-white/15">
+                    <Target size={14} className="text-[#e97824]" />
+                    <span>Our Mission</span>
+                  </div>
+                  <span className="text-[12px] font-mono text-white/50 uppercase tracking-widest">
+                    02 / Delivery
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-[26px] sm:text-[32px] font-heading font-normal text-white leading-[1.18] mb-5 tracking-tight">
+                  Connecting Services &amp; Opportunities Digitally
+                </h3>
+
+                {/* Primary Statement */}
+                <p className="text-[16.5px] sm:text-[18px] text-white font-heading font-medium leading-relaxed mb-6 font-sans">
+                  To build technology-enabled, partnership-driven platforms that connect households with reliable local service providers.
+                </p>
+
+                <p className="text-[14px] sm:text-[15px] text-white/80 leading-relaxed mb-8 font-sans">
+                  Improving service access, certifying local technicians, and expanding inclusive economic opportunities across 600,000+ villages.
+                </p>
+
+                {/* Pillars Breakdown */}
+                <div className="space-y-3.5 pt-6 border-t border-white/15 mb-8">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#e97824]/20 text-[#e97824] flex items-center justify-center shrink-0 mt-0.5">
+                      <Cpu size={14} />
+                    </div>
+                    <div>
+                      <p className="text-[13.5px] font-heading font-semibold text-white">Voice-First Vernacular AI</p>
+                      <p className="text-[12.5px] text-white/70 leading-relaxed">Speech dispatch in 22 languages breaking literacy barriers.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Layers size={14} />
+                    </div>
+                    <div>
+                      <p className="text-[13.5px] font-heading font-semibold text-white">VLE Livelihood Creation</p>
+                      <p className="text-[12.5px] text-white/70 leading-relaxed">Verified entrepreneur network driving local micro-economies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom CTA */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => handleScrollTo('rise')}
+                  className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#e97824] hover:bg-[#d66d1e] text-white text-[13.5px] font-heading font-medium transition-all shadow-md active:scale-[0.98]"
+                >
+                  <span>Discover RISE® Platform</span>
+                  <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
+                </button>
+              </div>
             </div>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

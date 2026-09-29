@@ -1,7 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo.tsx';
-import { Mail, ArrowUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowUp, ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
 
 interface FooterProps {
   onOpenEnquiry: () => void;
@@ -19,109 +18,178 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer
       id="main-footer"
-      className="bg-[#10243a] text-white pt-16 pb-12 border-t border-[#1e3a5a] overflow-hidden"
+      className="bg-[#101c32] text-[#fcf9f2] pt-16 sm:pt-20 pb-12 border-t border-[#1a2c4e] relative overflow-hidden"
+      aria-label="Site Footer"
     >
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#224060]"
-        >
-          {/* Brand & Entity Details */}
-          <div className="md:col-span-6 flex flex-col justify-between">
+      {/* Subtle Indian Glyph / Jali Texture (PRD Section 28 & 42) */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(#fcf9f2 1px, transparent 1px)`,
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-12 pb-14 border-b border-[#1f355c]">
+          {/* Brand Column */}
+          <div className="md:col-span-5 flex flex-col justify-between">
             <div>
-              {/* White-surface wrapper for clean brand presentation */}
-              <div className="inline-block bg-white px-5 py-3 sm:px-6 sm:py-3.5 rounded-[14px] mb-6 shadow-sm">
-                <Logo variant="compact" size="lg" />
+              <div className="mb-5">
+                <img
+                  src="/image 84.png"
+                  onError={(e) => {
+                    e.currentTarget.src = '/image-84.png';
+                  }}
+                  alt="First-Global Services & Technologies"
+                  className="h-8 sm:h-9 md:h-10 w-auto object-contain select-none"
+                />
               </div>
 
-              <h3 className="font-heading font-medium text-[16px] text-white/90 mb-2">
-                FirstGlobal Services &amp; Technologies Private Limited
-              </h3>
-              <p className="text-[14px] text-white/60 max-w-[420px] leading-relaxed">
-                AI Enabled Service Delivery Marketplace for Rural India. Charting Rural India’s Digital Services Future.
+              <p className="text-[14.5px] text-neutral-300 max-w-sm leading-relaxed mb-6 font-sans">
+                A technology-enabled social enterprise focused on transforming rural service delivery across 600,000+ Indian villages.
               </p>
-            </div>
 
-            <div className="mt-6 flex items-center gap-2.5 text-[14px] text-white/80">
-              <Mail size={16} className="text-[#20b9df]" />
-              <a
-                href="mailto:contact@first-global.in"
-                className="hover:text-[#20b9df] transition-colors focus:outline-none focus:underline"
-              >
-                contact@first-global.in
-              </a>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[12px] text-amber-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span>Rooted in India · Connected through Technology</span>
+              </div>
             </div>
           </div>
 
-          {/* Navigation Items (strictly matching supplied content) */}
-          <div className="md:col-span-6 flex flex-col md:items-end justify-between">
-            <div className="flex flex-col md:items-end space-y-3">
-              <span className="text-[12px] font-heading font-medium uppercase tracking-wider text-white/40 mb-1">
+          {/* Navigation Links Column */}
+          <div className="md:col-span-4 grid grid-cols-2 gap-6 text-[14px] font-heading">
+            <div>
+              <p className="text-[12px] uppercase tracking-wider text-[#e97824] font-semibold mb-4">
                 Navigation
-              </span>
+              </p>
+              <ul className="space-y-2.5 text-neutral-300">
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('home')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Home
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('about')}
+                    className="hover:text-white transition-colors"
+                  >
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('vision-mission')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Vision &amp; Mission
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('marketplace')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Marketplace
+                  </button>
+                </li>
+              </ul>
+            </div>
 
+            <div>
+              <p className="text-[12px] uppercase tracking-wider text-[#e97824] font-semibold mb-4">
+                Initiatives
+              </p>
+              <ul className="space-y-2.5 text-neutral-300">
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('rise')}
+                    className="hover:text-white transition-colors"
+                  >
+                    RISE® Initiative
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('partner')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Partner With Us
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('team')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Careers
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToSection('contact')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Contact Desk
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Quick Action Column */}
+          <div className="md:col-span-3 flex flex-col justify-between">
+            <div>
+              <p className="text-[12px] uppercase tracking-wider text-[#e97824] font-semibold mb-4">
+                Engagement
+              </p>
+              <p className="text-[13.5px] text-neutral-300 leading-relaxed mb-4">
+                Have questions or looking to bring the RISE® model to your district?
+              </p>
               <button
                 type="button"
-                id="footer-nav-home"
-                onClick={() => onNavigateToSection('home')}
-                className="text-[15px] font-heading font-normal text-white/80 hover:text-white transition-colors text-left md:text-right"
-              >
-                HOME
-              </button>
-
-              <button
-                type="button"
-                id="footer-nav-marketplace"
-                onClick={() => onNavigateToSection('marketplace')}
-                className="text-[15px] font-heading font-normal text-white/80 hover:text-white transition-colors text-left md:text-right"
-              >
-                JOIN THE MARKETPLACE
-              </button>
-
-              <button
-                type="button"
-                id="footer-nav-team"
-                onClick={() => onNavigateToSection('team')}
-                className="text-[15px] font-heading font-normal text-white/80 hover:text-white transition-colors text-left md:text-right"
-              >
-                JOIN OUR TEAM
-              </button>
-
-              <button
-                type="button"
-                id="footer-nav-touch"
                 onClick={onOpenEnquiry}
-                className="text-[15px] font-heading font-medium text-[#20b9df] hover:text-white transition-colors text-left md:text-right mt-1"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#fcf9f2] hover:bg-white text-[#101c32] font-heading font-medium text-[13.5px] py-3 rounded-full transition-all shadow-sm active:scale-[0.98]"
               >
-                GET IN TOUCH →
+                <span>Get in Touch</span>
+                <ArrowUpRight size={14} />
               </button>
             </div>
 
-            {/* Back to top button */}
-            <div className="mt-8 pt-4">
+            <div className="pt-6">
               <button
                 type="button"
-                id="back-to-top-btn"
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 text-[13px] font-heading font-normal text-white/50 hover:text-white transition-colors p-1"
-                aria-label="Back to top of page"
+                className="inline-flex items-center gap-2 text-[12px] text-neutral-400 hover:text-white transition-colors"
               >
-                <span>Back to top</span>
                 <ArrowUp size={14} />
+                <span>Back to Top</span>
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Bottom copyright row */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[13px] text-white/50 gap-4">
-          <p>© {new Date().getFullYear()} FirstGlobal Services &amp; Technologies Private Limited. All rights reserved.</p>
-          <p className="text-white/40 text-center sm:text-right">
-            Official communications: contact@first-global.in
+        {/* Bottom Copyright & Compliance Strip */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[12px] text-neutral-400 gap-4">
+          <p>
+            © {new Date().getFullYear()} FirstGlobal Services &amp; Technologies Private Limited. All rights reserved.
           </p>
+          <div className="flex items-center gap-6">
+            <span>RISE® Registered Initiative</span>
+            <span>·</span>
+            <span>Digital Public Infrastructure Interoperable</span>
+          </div>
         </div>
       </div>
     </footer>

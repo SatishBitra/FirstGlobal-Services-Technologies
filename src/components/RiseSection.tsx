@@ -1,140 +1,181 @@
-import React from 'react';
-import { Home, UserCheck, Landmark, Users } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { ArrowUpRight, Home, Wrench, Building2, Network, ArrowRight } from 'lucide-react';
+import { TextReveal, ScrollReveal } from './ScrollReveal.tsx';
 
-export const RiseSection: React.FC = () => {
-  const ecosystemEntities = [
+interface RiseSectionProps {
+  onOpenEnquiry?: () => void;
+}
+
+export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  const risePillars = [
     {
-      id: 'households',
+      id: 1,
       title: 'Households',
-      description: 'Rural families and consumers accessing dependable local services.',
+      tagline: 'Care & Essential Services',
+      description:
+        'Bringing reliable home maintenance, solar micro-grid support, clean water, and farm equipment care directly to village households.',
       icon: Home,
-      color: '#1557c0',
-      tagline: 'Reliable Household Access',
+      image: '/hh.jpg',
+      badge: 'Direct Beneficiaries',
+      borderColor: 'hover:border-[#e97824]',
+      accentBg: 'bg-[#e97824]',
     },
     {
-      id: 'service-providers',
+      id: 2,
       title: 'Local Service Providers',
-      description: 'Grassroots service entrepreneurs and technicians delivering frontline care.',
-      icon: UserCheck,
-      color: '#20b9df',
-      tagline: 'Grassroots Enterprise Model',
+      tagline: 'Livelihoods & Micro-Enterprise',
+      description:
+        'Empowering local Village Level Entrepreneurs (VLEs) and skilled rural youth with digital job dispatch, training, and steady income.',
+      icon: Wrench,
+      image: '/lsp.jpg',
+      badge: 'Empowered VLEs',
+      borderColor: 'hover:border-[#1557c0]',
+      accentBg: 'bg-[#1557c0]',
     },
     {
-      id: 'institutions',
+      id: 3,
       title: 'Institutions',
-      description: 'Civic, financial, and regional bodies providing governance and scale.',
-      icon: Landmark,
-      color: '#159b8b',
-      tagline: 'Civic & Financial Scale',
+      tagline: 'Panchayats & Cooperatives',
+      description:
+        'Partnering with Gram Panchayats, self-help groups (SHGs), rural banks, and cooperative societies for transparent governance.',
+      icon: Building2,
+      image: '/ri.jpg',
+      badge: 'Institutional Trust',
+      borderColor: 'hover:border-[#078f83]',
+      accentBg: 'bg-[#078f83]',
     },
     {
-      id: 'enabling-partners',
+      id: 4,
       title: 'Enabling Partners',
-      description: 'Technology, ecosystem, and network collaborators driving practical enterprise models.',
-      icon: Users,
-      color: '#57b957',
-      tagline: 'Digital Ecosystem Synergies',
+      tagline: 'Digital Public Infrastructure',
+      description:
+        'Integrating with India Stack, ONDC protocols, technology platforms, and social impact investors to scale across 600,000+ villages.',
+      icon: Network,
+      image: '/patnerships.jpg',
+      badge: 'Open Ecosystem',
+      borderColor: 'hover:border-[#4e9f45]',
+      accentBg: 'bg-[#4e9f45]',
     },
   ];
 
   return (
-    <section
-      id="marketplace"
-      className="py-20 md:py-28 bg-white border-b border-[#e6eaee] overflow-hidden"
-      aria-label="Join the Marketplace - RISE Initiative"
-    >
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
-        {/* Marketplace Section Anchor Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8 sm:mb-12"
-        >
-          <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
-            <span className="h-1.5 w-5 sm:w-6 bg-[#1557c0] rounded-full inline-block" />
-            <span className="text-[11px] sm:text-[13px] font-heading font-medium tracking-widest uppercase text-[#5f6b78]">
-              JOIN THE MARKETPLACE
-            </span>
-          </div>
+    <section id="rise" className="py-20 sm:py-28 lg:py-32 bg-[#ffffff] relative overflow-hidden" aria-label="RISE Initiative">
+      {/* Background jali pattern */}
+      <div className="absolute inset-0 bg-weave-pattern opacity-50 pointer-events-none" />
 
-          <h2 className="font-heading font-medium text-[26px] sm:text-[36px] md:text-[44px] text-[#10243a] tracking-tight">
-            RISE <sup className="text-base sm:text-xl font-normal text-[#1557c0]">®</sup> Initiative
-          </h2>
-        </motion.div>
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Section Header (PRD Section 19 & 20) with Text Reveal */}
+        <div className="max-w-3xl mb-14 sm:mb-18">
+          <ScrollReveal direction="up" delay={0.05}>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#102a56]/5 text-[#102a56] text-[12px] font-heading font-semibold uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-[#e97824]" />
+              <span>FirstGlobal Innovation Initiative</span>
+            </div>
+          </ScrollReveal>
 
-        {/* RISE Core Concept Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-[960px] mb-10 sm:mb-16"
-        >
-          <p
-            id="rise-description"
-            className="text-[15px] sm:text-[18px] md:text-[21px] leading-[1.65] text-[#10243a]"
-          >
-            RISE ® is FirstGlobal’s innovationled initiative that supports the development of organised, reliable rural service delivery. It brings together households, local service providers, institutions, and enabling partners through practical, enterprisefocused models.
-          </p>
-        </motion.div>
+          <TextReveal
+            as="h2"
+            text="RISE®"
+            className="text-[34px] sm:text-[46px] md:text-[54px] font-heading font-normal text-[#102a56] tracking-tight leading-[1.1] mb-5"
+          />
 
-        {/* Connected Ecosystem Architecture Visual (The 4 Entities from Source) */}
-        <div className="relative mt-4 sm:mt-8 pt-2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
-            {ecosystemEntities.map((entity, index) => {
-              const Icon = entity.icon;
-              return (
-                <motion.div
-                  key={entity.id}
-                  id={`ecosystem-node-${entity.id}`}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{
-                    duration: 0.55,
-                    delay: index * 0.1,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="bg-[#f8fafc] hover:bg-white rounded-[14px] p-5 sm:p-6 border border-[#e6eaee] transition-all hover:shadow-[0_4px_20px_rgba(16,36,58,0.06)] flex flex-col justify-between"
+          <ScrollReveal direction="up" delay={0.15}>
+            <p className="text-[19px] sm:text-[22px] font-heading font-medium text-[#e97824] leading-snug mb-4">
+              Organised, reliable rural service delivery
+            </p>
+
+            <p className="text-[15.5px] sm:text-[17px] text-[#6f6a61] leading-relaxed font-sans text-balance">
+              RISE® is First-Global’s innovation-led initiative that supports the development of organised, reliable rural service delivery. It brings together households, local service providers, institutions, and enabling partners through practical, enterprise-focused models.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* 4 Cards Modular Grid (PRD Section 20, 21, 22) with Scroll Reveal */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {risePillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
+
+            return (
+              <ScrollReveal key={pillar.id} direction="up" delay={0.1 * (idx + 1)}>
+                <div
+                  onMouseEnter={() => setActiveCard(pillar.id)}
+                  onMouseLeave={() => setActiveCard(null)}
+                  className={`h-full relative rounded-[24px] bg-[#fcf9f2] border border-[#e6eaee] overflow-hidden flex flex-col justify-between p-6 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 ${pillar.borderColor} group`}
                 >
-                  <div>
-                    {/* Node Icon with brand ring */}
-                    <div
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-[10px] flex items-center justify-center mb-4 sm:mb-5 bg-white border border-[#e6eaee]"
-                      style={{ color: entity.color }}
-                    >
-                      <Icon size={20} strokeWidth={1.75} className="sm:w-[22px] sm:h-[22px]" />
+                  {/* Top Image Thumbnail */}
+                  <div className="relative rounded-[16px] overflow-hidden aspect-[16/10] mb-5 bg-[#102a56]/10 shadow-xs">
+                    <img
+                      src={pillar.image}
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=600&q=80';
+                      }}
+                      alt={pillar.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute top-2.5 left-2.5">
+                      <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10.5px] font-heading font-medium tracking-wide">
+                        {pillar.badge}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col justify-between">
+                    <div>
+                      {/* Icon badge without span text beside it per user request */}
+                      <div className="flex items-center mb-3">
+                        <div className={`w-8 h-8 rounded-full ${pillar.accentBg} text-white flex items-center justify-center shadow-xs`}>
+                          <Icon size={15} />
+                        </div>
+                      </div>
+
+                      <h3 className="text-[18px] sm:text-[20px] font-heading font-semibold text-[#102a56] mb-2 leading-snug">
+                        {pillar.title}
+                      </h3>
+
+                      <p className="text-[13px] sm:text-[14px] text-[#6f6a61] leading-relaxed mb-6 font-sans">
+                        {pillar.description}
+                      </p>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="font-heading font-medium text-[17px] sm:text-[19px] text-[#10243a] mb-2">
-                      {entity.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-[13px] sm:text-[14px] text-[#5f6b78] leading-relaxed">
-                      {entity.description}
-                    </p>
+                    {/* Bottom Line Connection to RISE */}
+                    <div className="pt-4 border-t border-[#e6eaee] flex items-center justify-between text-[12px] font-heading font-medium text-[#102a56]">
+                      <span className="group-hover:text-[#e97824] transition-colors">{pillar.tagline}</span>
+                      <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
                   </div>
-
-                  <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-[#e2e8f0]/60 flex items-center gap-2">
-                    <span
-                      className="w-2 h-2 rounded-full"
-                      style={{ backgroundColor: entity.color }}
-                    />
-                    <span className="text-[11px] sm:text-[12px] font-heading font-medium text-[#5f6b78]">
-                      {entity.tagline}
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
+
+        {/* Central Ecosystem Synergy Bar */}
+        <ScrollReveal direction="up" delay={0.4}>
+          <div className="mt-12 p-6 rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+              <p className="text-[14px] sm:text-[15px] font-heading font-medium text-[#102a56]">
+                Four pillars connected into one unified sovereign rural platform.
+              </p>
+            </div>
+            {onOpenEnquiry && (
+              <button
+                type="button"
+                onClick={onOpenEnquiry}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#102a56] hover:bg-[#17202b] text-white text-[13.5px] font-heading font-medium transition-all shadow-xs"
+              >
+                <span>Explore RISE® Collaboration</span>
+                <ArrowRight size={14} />
+              </button>
+            )}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

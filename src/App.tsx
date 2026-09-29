@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { ReactLenis } from 'lenis/react';
 import { Header } from './components/Header.tsx';
 import { Hero } from './components/Hero.tsx';
-import { Introduction } from './components/Introduction.tsx';
+import { AboutSection } from './components/AboutSection.tsx';
 import { VisionMission } from './components/VisionMission.tsx';
+import { MarketplaceSection } from './components/MarketplaceSection.tsx';
 import { RiseSection } from './components/RiseSection.tsx';
 import { PartnerSection } from './components/PartnerSection.tsx';
 import { TeamSection } from './components/TeamSection.tsx';
+import { ContactSection } from './components/ContactSection.tsx';
 import { Footer } from './components/Footer.tsx';
 import { ContactModal } from './components/ContactModal.tsx';
 import { ApplicationModal } from './components/ApplicationModal.tsx';
@@ -30,59 +33,73 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#10243a] flex flex-col font-sans">
-      {/* Primary Sticky Header */}
-      <Header
-        onOpenEnquiry={() => setActiveModal('enquiry')}
-        onNavigateToSection={handleNavigateToSection}
-      />
-
-      {/* Main Content Sections */}
-      <main className="flex-1">
-        {/* 01. HOME — Hero */}
-        <Hero
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
+      <div className="min-h-screen bg-white text-[#17202b] flex flex-col font-sans selection:bg-[#e97824]/20 selection:text-[#102a56]">
+        {/* 1. Navigation — Minimal Floating Nav over Hero (PRD Section 6) */}
+        <Header
           onOpenEnquiry={() => setActiveModal('enquiry')}
-          onNavigateToMarketplace={() => handleNavigateToSection('marketplace')}
+          onNavigateToSection={handleNavigateToSection}
         />
 
-        {/* 02. Introduction Statement */}
-        <Introduction />
+        <main className="flex-1">
+          {/* 2. Hero — Immersive Photographic Hero with Floating Card & CTA (PRD Section 7-11) */}
+          <Hero
+            onOpenEnquiry={() => setActiveModal('enquiry')}
+            onNavigateToMarketplace={() => handleNavigateToSection('marketplace')}
+            onNavigateToRise={() => handleNavigateToSection('rise')}
+          />
 
-        {/* 03. Vision & Mission Statement */}
-        <VisionMission />
+          {/* 3. About / Introduction — Editorial 2-Col + 4-Card Modular Row (PRD Section 12-14) */}
+          <AboutSection
+            onOpenEnquiry={() => setActiveModal('enquiry')}
+            onNavigateToSection={handleNavigateToSection}
+          />
 
-        {/* 04. JOIN THE MARKETPLACE — RISE® Initiative */}
-        <RiseSection />
+          {/* 4. Vision + Mission — Side by Side with No Images (User Request) */}
+          <VisionMission onNavigateToSection={handleNavigateToSection} />
 
-        {/* 05. Partner With Us & Get in Touch */}
-        <PartnerSection
+          {/* 5. Join the Marketplace — Visual Transition Section (PRD Section 18 & 52) */}
+          <MarketplaceSection
+            onOpenEnquiry={() => setActiveModal('enquiry')}
+            onNavigateToRise={() => handleNavigateToSection('rise')}
+          />
+
+          {/* 6. RISE® — 4-Card Modular Ecosystem Grid (PRD Section 19-22) */}
+          <RiseSection
+            onOpenEnquiry={() => setActiveModal('enquiry')}
+          />
+
+          {/* 7. Partner With Us — Heritage Architecture Visual + DPI Overlay (PRD Section 23-24) */}
+          <PartnerSection
+            onOpenEnquiry={() => setActiveModal('enquiry')}
+          />
+
+          {/* 8. Join Our Team — Operations, Technology, Finance Cards (PRD Section 25-26) */}
+          <TeamSection
+            onOpenApply={() => setActiveModal('apply')}
+          />
+
+          {/* 9. Contact Experience — Split-screen In-Page Form (PRD Section 27) */}
+          <ContactSection />
+        </main>
+
+        {/* 10. Footer — Deep Indigo with Subtle Indian Pattern Texture (PRD Section 28) */}
+        <Footer
           onOpenEnquiry={() => setActiveModal('enquiry')}
+          onNavigateToSection={handleNavigateToSection}
         />
 
-        {/* 06. JOIN OUR TEAM & Apply Now */}
-        <TeamSection
-          onOpenApply={() => setActiveModal('apply')}
+        {/* Interactive Overlays */}
+        <ContactModal
+          isOpen={activeModal === 'enquiry'}
+          onClose={() => setActiveModal('none')}
         />
-      </main>
 
-      {/* Primary Footer */}
-      <Footer
-        onOpenEnquiry={() => setActiveModal('enquiry')}
-        onNavigateToSection={handleNavigateToSection}
-      />
-
-      {/* Interactive Overlays */}
-      {/* Get in Touch → Enquiry Form Modal */}
-      <ContactModal
-        isOpen={activeModal === 'enquiry'}
-        onClose={() => setActiveModal('none')}
-      />
-
-      {/* Apply Now → Join Our Team Application Modal */}
-      <ApplicationModal
-        isOpen={activeModal === 'apply'}
-        onClose={() => setActiveModal('none')}
-      />
-    </div>
+        <ApplicationModal
+          isOpen={activeModal === 'apply'}
+          onClose={() => setActiveModal('none')}
+        />
+      </div>
+    </ReactLenis>
   );
 }

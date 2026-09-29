@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo.tsx';
-import { Menu, X } from 'lucide-react';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowUpRight, Phone, Mail } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeaderProps {
   onOpenEnquiry: () => void;
@@ -15,16 +15,9 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -43,77 +36,139 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header
       id="main-header"
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 bg-white ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'border-b border-[#e6eaee] shadow-[0_2px_12px_rgba(16,36,58,0.04)] h-[76px] lg:h-[82px]'
-          : 'border-b border-transparent h-[82px] lg:h-[90px]'
+          ? 'bg-[#fcf9f2]/95 backdrop-blur-md border-b border-[#e6eaee] shadow-[0_4px_20px_rgba(16,42,86,0.06)] py-3 sm:py-3.5'
+          : 'bg-gradient-to-b from-black/60 via-black/30 to-transparent py-4 sm:py-6 text-white'
       }`}
     >
-      {/* Scroll Progress Indicator Bar */}
-      <motion.div
-        style={{ scaleX, transformOrigin: '0%' }}
-        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#1557c0] via-[#20b9df] to-[#159b8b] z-50 pointer-events-none"
-      />
-
-      <div className="max-w-[1240px] mx-auto h-full px-5 sm:px-8 flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 flex items-center justify-between">
+        {/* Left: Logo */}
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('home');
           }}
-          className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1557c0] rounded-md"
+          className="relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e97824] rounded-xl group py-1"
           id="header-logo-link"
         >
-          <Logo variant="full" size="md" />
+          {/* White Logo variant for default transparent hero */}
+          <img
+            src="/image 84.png"
+            onError={(e) => {
+              e.currentTarget.src = '/image-84.png';
+            }}
+            alt="First-Global Services & Technologies"
+            className={`h-8 sm:h-9 md:h-10 w-auto object-contain select-none transition-opacity duration-300 ${
+              isScrolled ? 'opacity-0 pointer-events-none absolute' : 'opacity-100 relative'
+            }`}
+          />
+          {/* Black Logo variant for scrolled light nav background */}
+          <img
+            src="/image-85.png"
+            onError={(e) => {
+              e.currentTarget.src = '/image 85.png';
+            }}
+            alt="First-Global Services & Technologies"
+            className={`h-8 sm:h-9 md:h-10 w-auto object-contain select-none transition-opacity duration-300 ${
+              isScrolled ? 'opacity-100 relative' : 'opacity-0 pointer-events-none absolute'
+            }`}
+          />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Center: Contact micro-bar & Nav items inspired by Farmora reference */}
         <nav
-          className="hidden md:flex items-center gap-7 lg:gap-9"
+          className="hidden lg:flex items-center gap-7 text-[14px] font-heading font-medium"
           aria-label="Primary Navigation"
         >
           <button
             type="button"
-            id="nav-home"
-            onClick={() => handleNavClick('home')}
-            className="text-[14px] lg:text-[15px] font-heading font-medium text-[#10243a] hover:text-[#1557c0] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1557c0] rounded px-1 py-1"
+            id="nav-about"
+            onClick={() => handleNavClick('about')}
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
           >
-            HOME
+            About
+          </button>
+          <button
+            type="button"
+            id="nav-vision"
+            onClick={() => handleNavClick('vision-mission')}
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
+          >
+            Vision &amp; Mission
           </button>
           <button
             type="button"
             id="nav-marketplace"
             onClick={() => handleNavClick('marketplace')}
-            className="text-[14px] lg:text-[15px] font-heading font-medium text-[#10243a] hover:text-[#1557c0] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1557c0] rounded px-1 py-1"
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
           >
-            JOIN THE MARKETPLACE
+            Marketplace
+          </button>
+          <button
+            type="button"
+            id="nav-rise"
+            onClick={() => handleNavClick('rise')}
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
+          >
+            RISE®
+          </button>
+          <button
+            type="button"
+            id="nav-partner"
+            onClick={() => handleNavClick('partner')}
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
+          >
+            Partners
           </button>
           <button
             type="button"
             id="nav-team"
             onClick={() => handleNavClick('team')}
-            className="text-[14px] lg:text-[15px] font-heading font-medium text-[#10243a] hover:text-[#1557c0] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1557c0] rounded px-1 py-1"
+            className={`transition-colors py-1 hover:text-[#e97824] ${
+              isScrolled ? 'text-[#17202b]' : 'text-white/90 hover:text-white'
+            }`}
           >
-            JOIN OUR TEAM
-          </button>
-          <button
-            type="button"
-            id="nav-get-in-touch"
-            onClick={handleEnquiryClick}
-            className="bg-[#1557c0] hover:bg-[#10243a] text-white text-[14px] lg:text-[15px] font-heading font-medium px-5 py-2.5 rounded-[10px] transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1557c0] focus-visible:ring-offset-2"
-          >
-            GET IN TOUCH
+            Careers
           </button>
         </nav>
+
+        {/* Right: Primary Pill CTA Button */}
+        <div className="hidden sm:flex items-center gap-3">
+          <button
+            type="button"
+            id="nav-cta-contact"
+            onClick={handleEnquiryClick}
+            className={`group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[13.5px] font-heading font-medium transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e97824] active:scale-[0.98] ${
+              isScrolled
+                ? 'bg-[#102a56] hover:bg-[#17202b] text-white'
+                : 'bg-white hover:bg-neutral-100 text-[#102a56]'
+            }`}
+          >
+            <span>Get in Touch</span>
+            <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
           id="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg text-[#10243a] hover:bg-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-[#1557c0]"
+          className={`lg:hidden p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#e97824] ${
+            isScrolled ? 'text-[#17202b] hover:bg-neutral-100' : 'text-white hover:bg-white/10'
+          }`}
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle Navigation Menu"
         >
@@ -121,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -130,40 +185,65 @@ export const Header: React.FC<HeaderProps> = ({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-b border-[#e6eaee] px-6 py-6 shadow-xl overflow-hidden"
+            className="lg:hidden bg-[#fcf9f2] border-b border-[#e6eaee] px-6 py-6 shadow-xl text-[#17202b]"
           >
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-3 font-heading font-medium text-[15px]">
               <button
                 type="button"
-                id="mobile-nav-home"
                 onClick={() => handleNavClick('home')}
-                className="text-left text-[14px] sm:text-[15px] font-heading font-medium text-[#10243a] py-2 border-b border-[#f1f5f9]"
+                className="text-left py-2 border-b border-neutral-200/60"
               >
-                HOME
+                Home
               </button>
               <button
                 type="button"
-                id="mobile-nav-marketplace"
+                onClick={() => handleNavClick('about')}
+                className="text-left py-2 border-b border-neutral-200/60"
+              >
+                About Us
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavClick('vision-mission')}
+                className="text-left py-2 border-b border-neutral-200/60"
+              >
+                Vision &amp; Mission
+              </button>
+              <button
+                type="button"
                 onClick={() => handleNavClick('marketplace')}
-                className="text-left text-[14px] sm:text-[15px] font-heading font-medium text-[#10243a] py-2 border-b border-[#f1f5f9]"
+                className="text-left py-2 border-b border-neutral-200/60"
               >
-                JOIN THE MARKETPLACE
+                Marketplace
               </button>
               <button
                 type="button"
-                id="mobile-nav-team"
+                onClick={() => handleNavClick('rise')}
+                className="text-left py-2 border-b border-neutral-200/60"
+              >
+                RISE® Initiative
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavClick('partner')}
+                className="text-left py-2 border-b border-neutral-200/60"
+              >
+                Partner With Us
+              </button>
+              <button
+                type="button"
                 onClick={() => handleNavClick('team')}
-                className="text-left text-[14px] sm:text-[15px] font-heading font-medium text-[#10243a] py-2 border-b border-[#f1f5f9]"
+                className="text-left py-2 border-b border-neutral-200/60"
               >
-                JOIN OUR TEAM
+                Careers
               </button>
+
               <button
                 type="button"
-                id="mobile-nav-touch"
                 onClick={handleEnquiryClick}
-                className="w-full mt-2 bg-[#1557c0] text-white text-[14px] font-heading font-medium py-3 rounded-[10px] text-center"
+                className="w-full mt-3 bg-[#102a56] hover:bg-[#17202b] text-white py-3.5 rounded-full text-center shadow-md font-medium"
               >
-                GET IN TOUCH
+                Get in Touch
               </button>
             </div>
           </motion.div>
