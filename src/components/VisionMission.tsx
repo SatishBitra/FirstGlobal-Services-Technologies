@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Target, ShieldCheck, HeartHandshake, Sparkles, Cpu, Layers } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowRight, Compass, Target } from 'lucide-react';
 import { TextReveal, ScrollReveal } from './ScrollReveal.tsx';
 
 interface VisionMissionProps {
@@ -83,28 +82,6 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
                   Bridging the last-mile divide by combining community empathy with sovereign intelligence, ensuring dignified services reach every doorstep.
                 </p>
 
-                {/* Pillars Breakdown */}
-                <div className="space-y-3.5 pt-6 border-t border-[#e6eaee] mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#e97824]/10 text-[#e97824] flex items-center justify-center shrink-0 mt-0.5">
-                      <ShieldCheck size={14} />
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] font-heading font-semibold text-[#102a56]">Sovereign Infrastructure</p>
-                      <p className="text-[12.5px] text-[#6f6a61] leading-relaxed">Built for resilience and open community governance.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#1557c0]/10 text-[#1557c0] flex items-center justify-center shrink-0 mt-0.5">
-                      <HeartHandshake size={14} />
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] font-heading font-semibold text-[#102a56]">Grassroots Trust</p>
-                      <p className="text-[12.5px] text-[#6f6a61] leading-relaxed">Empowering 800M+ citizens across rural Bharat.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Bottom CTA */}
@@ -150,28 +127,6 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
                   Improving service access, certifying local technicians, and expanding inclusive economic opportunities across 600,000+ villages.
                 </p>
 
-                {/* Pillars Breakdown */}
-                <div className="space-y-3.5 pt-6 border-t border-white/15 mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#e97824]/20 text-[#e97824] flex items-center justify-center shrink-0 mt-0.5">
-                      <Cpu size={14} />
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] font-heading font-semibold text-white">Voice-First Vernacular AI</p>
-                      <p className="text-[12.5px] text-white/70 leading-relaxed">Speech dispatch in 22 languages breaking literacy barriers.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Layers size={14} />
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] font-heading font-semibold text-white">VLE Livelihood Creation</p>
-                      <p className="text-[12.5px] text-white/70 leading-relaxed">Verified entrepreneur network driving local micro-economies.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Bottom CTA */}

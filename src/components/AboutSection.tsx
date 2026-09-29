@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
           {/* Card 1: Rural Indian Community & Households Concept Image */}
           <ScrollReveal direction="up" delay={0.1}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[220px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
               <img
                 src="/rc.jpg"
                 onError={(e) => {
@@ -90,7 +90,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 2: Feature / Stat Card (White surface with circular arrow) */}
           <ScrollReveal direction="up" delay={0.2}>
-            <div className="h-full relative rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group">
+            <div className="h-full min-h-[220px] relative rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[34px] sm:text-[40px] font-heading font-normal text-[#102a56] leading-none mb-1 tabular-nums">
@@ -118,7 +118,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 3: Local Services Delivery & Village Level Entrepreneur (VLE) Concept Image */}
           <ScrollReveal direction="up" delay={0.3}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[270px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[220px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
               <img
                 src="/ll.jpg"
                 onError={(e) => {
@@ -146,7 +146,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 4: Strong Brand Color Card (PRD Section 3-G: Saffron / Turmeric brand accent) */}
           <ScrollReveal direction="up" delay={0.4}>
-            <div className="h-full relative rounded-[20px] bg-gradient-to-br from-[#e97824] via-[#ea8335] to-[#d66d1e] text-white p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
+            <div className="h-full min-h-[220px] relative rounded-[20px] bg-gradient-to-br from-[#e97824] via-[#ea8335] to-[#d66d1e] text-white p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[34px] sm:text-[40px] font-heading font-normal text-white leading-none mb-1 tabular-nums">
