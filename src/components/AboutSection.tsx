@@ -96,12 +96,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             <div className="h-full relative rounded-[20px] bg-[#FAF9F5] border border-[#DDE5E1] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[34px] sm:text-[40px] font-heading font-normal text-[#123E9B] leading-none mb-1 tabular-nums">
-                      800M+
-                    </p>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#39C85A]" title="High impact footprint" />
-                  </div>
+                  <p className="text-[34px] sm:text-[40px] font-heading font-normal text-[#123E9B] leading-none mb-1 tabular-nums">
+                    800M+
+                  </p>
                   <p className="text-[14px] font-heading font-medium text-[#123E9B]">
                     Target Citizen Population
                   </p>
@@ -158,12 +155,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             <div className="h-full relative rounded-[20px] stat-card-highlight p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[34px] sm:text-[40px] font-heading font-normal text-white leading-none mb-1 tabular-nums">
-                      600K+
-                    </p>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#78D83E]" title="Active village network" />
-                  </div>
+                  <p className="text-[34px] sm:text-[40px] font-heading font-normal text-white leading-none mb-1 tabular-nums">
+                    600K+
+                  </p>
                   <p className="text-[14px] font-heading font-medium text-white/95">
                     Villages Connected Ecosystem
                   </p>

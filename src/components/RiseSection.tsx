@@ -120,12 +120,6 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute top-2.5 left-2.5">
-                      <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10.5px] font-heading font-medium tracking-wide">
-                        {pillar.badge}
-                      </span>
-                    </div>
                   </div>
 
                   {/* Content */}
