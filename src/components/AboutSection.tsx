@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
           {/* Card 1: Rural Indian Community & Households Concept Image */}
           <ScrollReveal direction="up" delay={0.1}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[220px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] shadow-sm group bg-[#102a56]">
               <img
                 src="/rc.jpg"
                 onError={(e) => {
@@ -118,7 +118,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 3: Local Services Delivery & Village Level Entrepreneur (VLE) Concept Image */}
           <ScrollReveal direction="up" delay={0.3}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] sm:aspect-auto min-h-[220px] sm:min-h-[300px] shadow-sm group bg-[#102a56]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] shadow-sm group bg-[#102a56]">
               <img
                 src="/ll.jpg"
                 onError={(e) => {
