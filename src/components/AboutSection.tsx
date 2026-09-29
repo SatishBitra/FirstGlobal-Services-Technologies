@@ -62,7 +62,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
           {/* Card 1: Rural Indian Community & Households Concept Image */}
           <ScrollReveal direction="up" delay={0.1}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] shadow-sm group bg-[#102a56]">
+            <div className="group relative isolate overflow-hidden rounded-[20px] aspect-[4/3] min-h-[270px] sm:aspect-auto sm:min-h-[300px] lg:min-h-[360px] shadow-sm bg-[#102a56]">
+              <div className="absolute inset-0 bg-[#102a56]/20" />
               <img
                 src="/rc.jpg"
                 onError={(e) => {
@@ -71,26 +72,28 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 }}
                 alt="Rural Indian village households and community receiving trusted essential services"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center transform group-hover:scale-[1.05] transition-transform duration-700 ease-out brightness-[0.88] contrast-[1.05]"
+                className="absolute inset-0 h-full w-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.05] brightness-[0.88] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[11px] font-heading uppercase tracking-wider text-amber-300 font-semibold">
-                  Rural Communities
-                </span>
-                <p className="text-[15px] sm:text-[16px] font-heading font-medium leading-snug mt-0.5">
-                  Empowering Village Households &amp; Families
-                </p>
-                <p className="text-[12px] text-white/80 line-clamp-1 mt-1">
-                  Connecting 800M+ citizens across 600K+ villages.
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5 lg:p-5">
+                <div className="text-white">
+                  <span className="block text-[10.5px] sm:text-[11px] font-heading uppercase tracking-[0.18em] text-amber-300 font-semibold">
+                    Rural Communities
+                  </span>
+                  <p className="mt-2 text-[15px] sm:text-[16px] font-heading font-medium leading-snug tracking-tight">
+                    Empowering Village Households &amp; Families
+                  </p>
+                  <p className="mt-1 text-[12px] leading-relaxed text-white/75 line-clamp-1">
+                    Connecting 800M+ citizens across 600K+ villages.
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollReveal>
 
           {/* Card 2: Feature / Stat Card (White surface with circular arrow) */}
           <ScrollReveal direction="up" delay={0.2}>
-            <div className="h-full min-h-[220px] relative rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group">
+            <div className="h-full relative rounded-[20px] bg-[#fcf9f2] border border-[#e6eaee] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[34px] sm:text-[40px] font-heading font-normal text-[#102a56] leading-none mb-1 tabular-nums">
@@ -118,7 +121,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 3: Local Services Delivery & Village Level Entrepreneur (VLE) Concept Image */}
           <ScrollReveal direction="up" delay={0.3}>
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] shadow-sm group bg-[#102a56]">
+            <div className="group relative isolate overflow-hidden rounded-[20px] aspect-[4/3] min-h-[270px] sm:aspect-auto sm:min-h-[300px] lg:min-h-[360px] shadow-sm bg-[#102a56]">
+              <div className="absolute inset-0 bg-[#102a56]/20" />
               <img
                 src="/ll.jpg"
                 onError={(e) => {
@@ -127,26 +131,28 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 }}
                 alt="Rural technician and Village Level Entrepreneur delivering solar and household services"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center transform group-hover:scale-[1.05] transition-transform duration-700 ease-out brightness-[0.88] contrast-[1.05]"
+                className="absolute inset-0 h-full w-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.05] brightness-[0.88] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[11px] font-heading uppercase tracking-wider text-emerald-300 font-semibold">
-                  Local Livelihoods
-                </span>
-                <p className="text-[15px] sm:text-[16px] font-heading font-medium leading-snug mt-0.5">
-                  Verified Village Level Entrepreneurs (VLEs)
-                </p>
-                <p className="text-[12px] text-white/80 line-clamp-1 mt-1">
-                  Local technicians providing solar, water &amp; home care.
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5 lg:p-5">
+                <div className="text-white">
+                  <span className="block text-[10.5px] sm:text-[11px] font-heading uppercase tracking-[0.18em] text-emerald-300 font-semibold">
+                    Local Livelihoods
+                  </span>
+                  <p className="mt-2 text-[15px] sm:text-[16px] font-heading font-medium leading-snug tracking-tight">
+                    Verified Village Level Entrepreneurs (VLEs)
+                  </p>
+                  <p className="mt-1 text-[12px] leading-relaxed text-white/75 line-clamp-1">
+                    Local technicians providing solar, water &amp; home care.
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollReveal>
 
           {/* Card 4: Strong Brand Color Card (PRD Section 3-G: Saffron / Turmeric brand accent) */}
           <ScrollReveal direction="up" delay={0.4}>
-            <div className="h-full min-h-[220px] relative rounded-[20px] bg-gradient-to-br from-[#e97824] via-[#ea8335] to-[#d66d1e] text-white p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
+            <div className="h-full relative rounded-[20px] bg-gradient-to-br from-[#e97824] via-[#ea8335] to-[#d66d1e] text-white p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-[34px] sm:text-[40px] font-heading font-normal text-white leading-none mb-1 tabular-nums">
