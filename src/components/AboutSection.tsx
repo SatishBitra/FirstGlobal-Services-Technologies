@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Globe } from 'lucide-react';
 import { TextReveal, ScrollReveal } from './ScrollReveal.tsx';
 
 interface AboutSectionProps {
@@ -152,8 +152,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {/* Card 4: New Green/Teal Statistic Card */}
           <ScrollReveal direction="up" delay={0.4}>
-            <div className="h-full relative rounded-[20px] stat-card-highlight p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
-              <div className="flex items-start justify-between">
+            <div className="h-full relative overflow-hidden rounded-[20px] stat-card-highlight p-6 sm:p-7 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow group">
+              {/* Background Globe Outline Overlay in Light Blue */}
+              <div
+                className="absolute -bottom-6 -right-6 pointer-events-none select-none z-0 transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-6 opacity-35"
+                aria-hidden="true"
+              >
+                <Globe
+                  size={124}
+                  strokeWidth={1.25}
+                  className="text-[#BAE6FD]"
+                />
+              </div>
+
+              <div className="relative z-10 flex items-start justify-between">
                 <div>
                   <p className="text-[34px] sm:text-[40px] font-heading font-normal text-white leading-none mb-1 tabular-nums">
                     600K+
@@ -172,7 +184,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 </button>
               </div>
 
-              <p className="text-[13px] sm:text-[13.5px] text-white/95 leading-relaxed mt-4 font-sans">
+              <p className="relative z-10 text-[13px] sm:text-[13.5px] text-white/95 leading-relaxed mt-4 font-sans">
                 Uniting households, service providers, and institutions through the RISE® initiative for reliable rural service delivery.
               </p>
             </div>

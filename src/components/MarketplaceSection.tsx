@@ -20,26 +20,26 @@ export const MarketplaceSection: React.FC<MarketplaceSectionProps> = ({
       className="py-20 sm:py-28 lg:py-32 text-white relative overflow-hidden"
       aria-label="Join the Marketplace"
     >
-      {/* Subtle Indian Rangoli & Mandala Geometric Pattern (low opacity 0.05) */}
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+      {/* Subtle Globe Pattern Grid */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none select-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="indian-rangoli-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              {/* Concentric Rangoli Petals and Radial Nodes */}
-              <circle cx="40" cy="40" r="2" fill="#FFFFFF" />
-              <circle cx="40" cy="40" r="16" fill="none" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="2 3" />
-              <circle cx="40" cy="40" r="28" fill="none" stroke="#FFFFFF" strokeWidth="0.5" />
-              {/* Fine radial lines */}
-              <path d="M 40 12 L 40 68 M 12 40 L 68 40" stroke="#FFFFFF" strokeWidth="0.5" />
-              <path d="M 20 20 L 60 60 M 20 60 L 60 20" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="1 3" />
+            <pattern id="globe-pattern-grid" width="110" height="110" patternUnits="userSpaceOnUse">
+              {/* Globe Icon Vector Outline: Outer sphere, meridians, and equator */}
+              <circle cx="55" cy="55" r="24" fill="none" stroke="#FFFFFF" strokeWidth="0.85" />
+              <ellipse cx="55" cy="55" rx="11" ry="24" fill="none" stroke="#FFFFFF" strokeWidth="0.75" />
+              <line x1="55" y1="31" x2="55" y2="79" stroke="#FFFFFF" strokeWidth="0.6" strokeDasharray="2 3" />
+              <line x1="31" y1="55" x2="79" y2="55" stroke="#FFFFFF" strokeWidth="0.85" />
+              <path d="M 35 43 Q 55 47 75 43" fill="none" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="2 3" />
+              <path d="M 35 67 Q 55 63 75 67" fill="none" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="2 3" />
               {/* Corner connector nodes */}
               <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" />
-              <circle cx="80" cy="0" r="1.5" fill="#FFFFFF" />
-              <circle cx="0" cy="80" r="1.5" fill="#FFFFFF" />
-              <circle cx="80" cy="80" r="1.5" fill="#FFFFFF" />
+              <circle cx="110" cy="0" r="1.5" fill="#FFFFFF" />
+              <circle cx="0" cy="110" r="1.5" fill="#FFFFFF" />
+              <circle cx="110" cy="110" r="1.5" fill="#FFFFFF" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#indian-rangoli-grid)" />
+          <rect width="100%" height="100%" fill="url(#globe-pattern-grid)" />
         </svg>
       </div>
 

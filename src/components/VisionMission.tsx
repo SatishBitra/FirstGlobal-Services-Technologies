@@ -63,9 +63,6 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
                     <Compass size={14} className="text-[#00A88A]" />
                     <span>Our Vision</span>
                   </div>
-                  <span className="text-[12px] font-mono text-[#667085] uppercase tracking-widest">
-                    01 / Foundations
-                  </span>
                 </div>
 
                 {/* Title */}
@@ -113,9 +110,6 @@ export const VisionMission: React.FC<VisionMissionProps> = ({ onNavigateToSectio
                     <Target size={14} className="text-[#00AFC7]" />
                     <span>Our Mission</span>
                   </div>
-                  <span className="text-[12px] font-mono text-white/50 uppercase tracking-widest">
-                    02 / Delivery
-                  </span>
                 </div>
 
                 {/* Title */}
