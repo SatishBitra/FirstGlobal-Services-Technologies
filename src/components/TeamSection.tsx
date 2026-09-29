@@ -99,39 +99,39 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onOpenApply }) => {
               <ScrollReveal key={dept.id} direction="up" delay={0.1 * (index + 1)}>
                 <div
                   onClick={onOpenApply}
-                  className={`h-full relative rounded-[24px] sm:rounded-[28px] ${dept.cardBg} border ${dept.cardBorder} p-7 sm:p-9 flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5`}
+                  className={`h-full relative rounded-[22px] sm:rounded-[28px] ${dept.cardBg} border ${dept.cardBorder} p-5 sm:p-8 lg:p-9 flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5`}
                 >
                   <div>
-                    {/* Top Bar with Number & Arrow Button */}
-                    <div className="flex items-center justify-between mb-8">
-                      <span className="text-[12px] font-mono text-[#667085]">
-                        0{index + 1}
-                      </span>
-                      <div className="w-10 h-10 rounded-full bg-white border border-[#DDE5E1] text-[#123E9B] flex items-center justify-center transition-all duration-200 group-hover:bg-[#123E9B] group-hover:text-white group-hover:scale-105 shadow-xs">
-                        <ArrowUpRight size={18} />
+                    {/* Top Bar with Number, Icon, & Arrow Button */}
+                    <div className="flex items-center justify-between mb-4 sm:mb-8">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-[#DDE5E1] flex items-center justify-center shadow-xs">
+                          <Icon size={19} className={dept.accentColor} />
+                        </div>
+                        <span className="text-[11.5px] sm:text-[12px] font-mono text-[#667085]">
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-[#DDE5E1] text-[#123E9B] flex items-center justify-center transition-all duration-200 group-hover:bg-[#123E9B] group-hover:text-white group-hover:scale-105 shadow-xs">
+                        <ArrowUpRight size={16} />
                       </div>
                     </div>
 
-                    {/* Icon & Title */}
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-[#DDE5E1] flex items-center justify-center mb-6 shadow-xs">
-                      <Icon size={22} className={dept.accentColor} />
-                    </div>
-
-                    <h3 className="text-[22px] sm:text-[24px] font-heading font-semibold text-[#123E9B] tracking-tight mb-2">
+                    <h3 className="text-[18px] sm:text-[23px] font-heading font-semibold text-[#123E9B] tracking-tight mb-1 sm:mb-2">
                       {dept.title}
                     </h3>
 
-                    <p className="text-[13.5px] font-heading font-medium text-[#667085] mb-4">
+                    <p className={`text-[12.5px] sm:text-[13.5px] font-heading font-medium ${dept.accentColor} sm:text-[#667085] mb-2 sm:mb-4 tracking-normal`}>
                       {dept.subtitle}
                     </p>
 
-                    <p className="text-[13.5px] sm:text-[14px] text-[#667085] leading-relaxed font-sans mb-8">
+                    <p className="text-[13px] sm:text-[14px] text-[#667085] leading-relaxed font-sans mb-4 sm:mb-8 line-clamp-3 sm:line-clamp-none">
                       {dept.description}
                     </p>
                   </div>
 
                   {/* Bottom CTA text */}
-                  <div className={`pt-4 border-t border-black/5 flex items-center justify-between text-[13px] font-heading font-semibold text-[#123E9B] ${dept.ctaHoverColor} transition-colors`}>
+                  <div className={`pt-3 sm:pt-4 border-t border-black/5 flex items-center justify-between text-[12.5px] sm:text-[13px] font-heading font-semibold text-[#123E9B] ${dept.ctaHoverColor} transition-colors`}>
                     <span>Apply for {dept.title}</span>
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </div>

@@ -96,59 +96,68 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
           </ScrollReveal>
         </div>
 
-        {/* 4 Cards Modular Grid with category indicators */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* 4 Cards Modular Grid: Smooth Stacked Cards on Mobile, 4-Col Grid on Desktop */}
+        <div className="flex flex-col space-y-5 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:items-stretch">
           {risePillars.map((pillar, idx) => {
             const Icon = pillar.icon;
 
             return (
-              <ScrollReveal key={pillar.id} direction="up" delay={0.1 * (idx + 1)}>
-                <div
-                  onMouseEnter={() => setActiveCard(pillar.id)}
-                  onMouseLeave={() => setActiveCard(null)}
-                  className={`h-full relative rounded-[24px] bg-[#FAF9F5] border border-[#DDE5E1] overflow-hidden flex flex-col justify-between p-6 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 ${pillar.borderColor} group`}
-                >
-                  {/* Top Image Thumbnail */}
-                  <div className="relative rounded-[16px] overflow-hidden aspect-[16/10] mb-5 bg-[#071B3A]/10 shadow-xs">
-                    <img
-                      src={pillar.image}
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=600&q=80';
-                      }}
-                      alt={pillar.title}
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
-                    />
-                  </div>
+              <div
+                key={pillar.id}
+                style={{ top: `calc(72px + ${idx * 14}px)` }}
+                className="sticky sm:static z-[10] transition-all duration-300"
+              >
+                <ScrollReveal direction="up" delay={0.08 * (idx + 1)}>
+                  <div
+                    onMouseEnter={() => setActiveCard(pillar.id)}
+                    onMouseLeave={() => setActiveCard(null)}
+                    className={`h-full relative rounded-[22px] sm:rounded-[24px] bg-[#FAF9F5] border border-[#DDE5E1] overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-300 shadow-[0_8px_24px_rgba(7,27,58,0.06)] sm:shadow-sm hover:shadow-xl hover:-translate-y-1 ${pillar.borderColor} group`}
+                  >
+                    {/* Top Image Thumbnail */}
+                    <div className="relative rounded-[14px] sm:rounded-[16px] overflow-hidden aspect-[16/9] sm:aspect-[16/10] mb-4 sm:mb-5 bg-[#071B3A]/10 shadow-xs">
+                      <img
+                        src={pillar.image}
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=600&q=80';
+                        }}
+                        alt={pillar.title}
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div>
-                      {/* Icon badge */}
-                      <div className="flex items-center mb-3">
-                        <div className={`w-8 h-8 rounded-full ${pillar.accentBg} text-white flex items-center justify-center shadow-xs`}>
-                          <Icon size={15} />
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        {/* Icon badge & Mobile Pillar Count */}
+                        <div className="flex items-center justify-between mb-3">
+                          <div className={`w-8 h-8 rounded-full ${pillar.accentBg} text-white flex items-center justify-center shadow-xs`}>
+                            <Icon size={15} />
+                          </div>
+                          <span className="sm:hidden text-[11px] font-mono text-[#667085] bg-black/5 px-2.5 py-0.5 rounded-full font-medium">
+                            Pillar 0{idx + 1}
+                          </span>
                         </div>
+
+                        <h3 className="text-[17px] sm:text-[20px] font-heading font-semibold text-[#123E9B] mb-1.5 leading-snug">
+                          {pillar.title}
+                        </h3>
+
+                        <p className="text-[13px] sm:text-[14px] text-[#667085] leading-relaxed mb-4 sm:mb-6 font-sans">
+                          {pillar.description}
+                        </p>
                       </div>
 
-                      <h3 className="text-[18px] sm:text-[20px] font-heading font-semibold text-[#123E9B] mb-2 leading-snug">
-                        {pillar.title}
-                      </h3>
-
-                      <p className="text-[13px] sm:text-[14px] text-[#667085] leading-relaxed mb-6 font-sans">
-                        {pillar.description}
-                      </p>
-                    </div>
-
-                    {/* Bottom Line Connection to RISE */}
-                    <div className="pt-4 border-t border-[#DDE5E1] flex items-center justify-between text-[12px] font-heading font-medium text-[#123E9B]">
-                      <span className={`${pillar.accentColor} transition-colors`}>{pillar.tagline}</span>
-                      <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      {/* Bottom Line Connection to RISE */}
+                      <div className="pt-3 sm:pt-4 border-t border-[#DDE5E1] flex items-center justify-between text-[12px] font-heading font-medium text-[#123E9B]">
+                        <span className={`${pillar.accentColor} transition-colors`}>{pillar.tagline}</span>
+                        <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
             );
           })}
         </div>

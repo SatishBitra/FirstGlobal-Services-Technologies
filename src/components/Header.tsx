@@ -166,87 +166,116 @@ export const Header: React.FC<HeaderProps> = ({
           type="button"
           id="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`lg:hidden p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00AFC7] ${
-            isScrolled ? 'text-[#12233F] hover:bg-neutral-100' : 'text-white hover:bg-white/10'
+          className={`lg:hidden p-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00AFC7] transition-colors relative z-50 ${
+            mobileMenuOpen
+              ? 'text-[#12233F] bg-black/5 hover:bg-black/10'
+              : isScrolled
+              ? 'text-[#12233F] hover:bg-neutral-100'
+              : 'text-white hover:bg-white/10'
           }`}
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle Navigation Menu"
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <motion.div
+            key={mobileMenuOpen ? 'close' : 'open'}
+            initial={{ opacity: 0, rotate: mobileMenuOpen ? -90 : 90, scale: 0.8 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: mobileMenuOpen ? 90 : -90, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </motion.div>
         </button>
       </div>
 
       {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            id="mobile-nav-panel"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden bg-[#FAF9F5] border-b border-[#DDE5E1] px-6 py-6 shadow-xl text-[#12233F]"
-          >
-            <div className="flex flex-col space-y-3 font-heading font-medium text-[15px]">
-              <button
-                type="button"
-                onClick={() => handleNavClick('home')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                Home
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('about')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                About Us
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('vision-mission')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                Vision &amp; Mission
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('marketplace')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                Marketplace
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('rise')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                RISE® Initiative
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('partner')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                Partner With Us
-              </button>
-              <button
-                type="button"
-                onClick={() => handleNavClick('team')}
-                className="text-left py-2 border-b border-neutral-200/60 hover:text-[#1769C2]"
-              >
-                Careers
-              </button>
+          <>
+            {/* Backdrop Scrim */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-xs z-40 lg:hidden"
+              style={{ top: '64px' }}
+              aria-hidden="true"
+            />
 
-              <button
-                type="button"
-                onClick={handleEnquiryClick}
-                className="w-full mt-3 btn-gradient-primary text-white py-3.5 rounded-full text-center shadow-md font-medium"
-              >
-                Get in Touch
-              </button>
-            </div>
-          </motion.div>
+            {/* Slide Down Panel with overflow-hidden to prevent transition artifacts */}
+            <motion.div
+              id="mobile-nav-panel"
+              initial={{ opacity: 0, height: 0, y: -8 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -8 }}
+              transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden overflow-hidden bg-[#FAF9F5]/98 backdrop-blur-xl border-b border-[#DDE5E1] shadow-2xl text-[#12233F] relative z-50 max-h-[calc(100vh-80px)] overflow-y-auto"
+            >
+              <div className="px-6 pt-3 pb-6 flex flex-col space-y-1 font-heading font-medium text-[15px]">
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('home')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  Home
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('about')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  About Us
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('vision-mission')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  Vision &amp; Mission
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('marketplace')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  Marketplace
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('rise')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  RISE® Initiative
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('partner')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  Partner With Us
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('team')}
+                  className="text-left py-2.5 px-3 rounded-lg hover:bg-black/5 text-[#12233F] transition-colors"
+                >
+                  Careers
+                </button>
+
+                <div className="pt-3 border-t border-[#DDE5E1]/70 mt-2">
+                  <button
+                    type="button"
+                    onClick={handleEnquiryClick}
+                    className="w-full btn-gradient-primary text-white py-3.5 rounded-full text-center shadow-md font-medium text-[14.5px]"
+                  >
+                    Get in Touch
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
