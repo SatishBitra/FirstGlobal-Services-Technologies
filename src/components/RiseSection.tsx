@@ -80,15 +80,12 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.1}>
-            <div className="flex items-center gap-4 sm:gap-6 mb-5">
+            <div className="flex items-center mb-6">
               <img
                 src="/Rise logo.png"
                 alt="RISE® Brand Logo"
-                className="h-12 sm:h-16 md:h-20 w-auto max-w-[240px] object-contain drop-shadow-xs"
+                className="h-12 sm:h-16 md:h-20 w-auto max-w-[260px] object-contain drop-shadow-xs"
               />
-              <h2 className="text-[32px] sm:text-[44px] md:text-[52px] font-heading font-normal text-[#123E9B] tracking-tight leading-none">
-                RISE®
-              </h2>
             </div>
           </ScrollReveal>
 
