@@ -70,20 +70,27 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
       <div className="absolute inset-0 bg-indian-weave opacity-40 pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header with Green-Teal Tone */}
-        <div className="max-w-3xl mb-14 sm:mb-18">
+        {/* Section Header with Green-Teal Tone & RISE Brand Logo */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <ScrollReveal direction="up" delay={0.05}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A88A]/10 text-[#00A88A] text-[12px] font-heading font-medium tracking-wide mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A88A]/10 text-[#00A88A] text-[12px] font-heading font-medium tracking-wide mb-5">
               <span className="w-2 h-2 rounded-full bg-[#00A88A]" />
               <span>FirstGlobal Innovation Initiative</span>
             </div>
           </ScrollReveal>
 
-          <TextReveal
-            as="h2"
-            text="RISE®"
-            className="text-[34px] sm:text-[46px] md:text-[54px] font-heading font-normal text-[#123E9B] tracking-tight leading-[1.1] mb-5"
-          />
+          <ScrollReveal direction="up" delay={0.1}>
+            <div className="flex items-center gap-4 sm:gap-6 mb-5">
+              <img
+                src="/Rise logo.png"
+                alt="RISE® Brand Logo"
+                className="h-12 sm:h-16 md:h-20 w-auto max-w-[240px] object-contain drop-shadow-xs"
+              />
+              <h2 className="text-[32px] sm:text-[44px] md:text-[52px] font-heading font-normal text-[#123E9B] tracking-tight leading-none">
+                RISE®
+              </h2>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.15}>
             <p className="text-[19px] sm:text-[22px] font-heading font-medium text-[#00A88A] leading-snug mb-4">

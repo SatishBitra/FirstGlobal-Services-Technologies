@@ -217,9 +217,10 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#071B3A]/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-[#071B3A]/65 backdrop-blur-sm p-3 sm:p-6 md:p-8 flex min-h-full items-center justify-center animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
+      data-lenis-prevent="true"
       aria-labelledby="apply-modal-title"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -227,11 +228,12 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-[640px] bg-white rounded-[20px] shadow-2xl border border-[#DDE5E1] overflow-hidden max-h-[92vh] flex flex-col"
+        data-lenis-prevent="true"
+        className="relative w-full max-w-[640px] my-auto bg-white rounded-[20px] sm:rounded-[24px] shadow-2xl border border-[#DDE5E1] overflow-hidden max-h-[calc(100dvh-1.5rem)] sm:max-h-[min(90vh,820px)] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="px-6 sm:px-8 pt-7 pb-5 border-b border-[#DDE5E1] flex items-center justify-between bg-white sticky top-0 z-10">
+        <div className="px-6 sm:px-8 pt-6 sm:pt-7 pb-4 sm:pb-5 border-b border-[#DDE5E1] flex items-center justify-between bg-white sticky top-0 z-10 shrink-0">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="h-2 w-2 rounded-full bg-[#00A88A]" />
@@ -241,7 +243,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
             </div>
             <h3
               id="apply-modal-title"
-              className="font-heading font-medium text-[24px] sm:text-[26px] text-[#123E9B]"
+              className="font-heading font-medium text-[22px] sm:text-[26px] text-[#123E9B]"
             >
               JOIN OUR TEAM
             </h3>
@@ -258,8 +260,11 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="px-6 sm:px-8 py-6 overflow-y-auto flex-1">
+        {/* Modal Body with data-lenis-prevent & touch scroll support */}
+        <div
+          data-lenis-prevent="true"
+          className="px-5 sm:px-8 py-5 sm:py-6 overflow-y-auto overscroll-contain flex-1 touch-pan-y"
+        >
           {isSubmitted ? (
             <SubmissionSuccess
               title="Application Received"

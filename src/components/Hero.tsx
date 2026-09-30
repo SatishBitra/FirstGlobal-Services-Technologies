@@ -88,9 +88,9 @@ export const Hero: React.FC<HeroProps> = ({
           className="w-full h-full object-cover object-center scale-[1.01] brightness-[0.92] contrast-[1.02]"
         />
 
-        {/* Compact bottom overlay with reduced height and softer intensity */}
-        <div className="absolute inset-x-0 bottom-0 h-48 sm:h-56 lg:h-64 bg-gradient-to-t from-[#071B3A]/80 via-[#071B3A]/30 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+        {/* Increased bottom overlay extending up through description and headlines for superior readability */}
+        <div className="absolute inset-x-0 bottom-0 h-[78%] sm:h-[72%] lg:h-[66%] bg-gradient-to-t from-[#071B3A] via-[#071B3A]/85 via-48% to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
         {/* Subtle Indian Heritage Jali Texture (4-6% opacity) */}
         <div
