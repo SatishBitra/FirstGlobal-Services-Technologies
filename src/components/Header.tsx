@@ -55,23 +55,23 @@ export const Header: React.FC<HeaderProps> = ({
         >
           {/* White Logo variant for default transparent hero */}
           <img
-            src="/image 84.png"
+            src="/FIRST-global_white.png"
             onError={(e) => {
               e.currentTarget.src = '/image-84.png';
             }}
             alt="First-Global Services & Technologies"
-            className={`h-9 sm:h-10 md:h-12 lg:h-[52px] xl:h-[58px] w-auto object-contain select-none transition-opacity duration-300 ${
+            className={`h-6 sm:h-7 md:h-7.5 lg:h-8 xl:h-8.5 w-auto object-contain select-none transition-opacity duration-300 ${
               isScrolled ? 'opacity-0 pointer-events-none absolute' : 'opacity-100 relative'
             }`}
           />
           {/* Black Logo variant for scrolled light nav background */}
           <img
-            src="/image-85.png"
+            src="/FIRST-global_black.png"
             onError={(e) => {
-              e.currentTarget.src = '/image 85.png';
+              e.currentTarget.src = '/image-85.png';
             }}
             alt="First-Global Services & Technologies"
-            className={`h-9 sm:h-10 md:h-12 lg:h-[48px] xl:h-[52px] w-auto object-contain select-none transition-opacity duration-300 ${
+            className={`h-6 sm:h-7 md:h-7.5 lg:h-8 xl:h-8.5 w-auto object-contain select-none transition-opacity duration-300 ${
               isScrolled ? 'opacity-100 relative' : 'opacity-0 pointer-events-none absolute'
             }`}
           />

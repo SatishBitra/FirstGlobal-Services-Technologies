@@ -40,12 +40,12 @@ export const Footer: React.FC<FooterProps> = ({
             <div>
               <div className="mb-5">
                 <img
-                  src="/image 84.png"
+                  src="/FIRST-global_white.png"
                   onError={(e) => {
                     e.currentTarget.src = '/image-84.png';
                   }}
                   alt="First-Global Services & Technologies"
-                  className="h-9 sm:h-10 md:h-12 lg:h-[50px] w-auto object-contain select-none"
+                  className="h-7 sm:h-8 md:h-8.5 lg:h-9 w-auto object-contain select-none"
                 />
               </div>
 

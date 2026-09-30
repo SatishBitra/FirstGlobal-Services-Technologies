@@ -16,7 +16,7 @@ export const LogoSymbol: React.FC<{
   theme = 'dark',
   size = 40,
 }) => {
-  const src = theme === 'white' ? '/image 84.png' : '/image-85.png';
+  const src = theme === 'white' ? '/FIRST-global_white.png' : '/FIRST-global_black.png';
   const fallback = theme === 'white' ? '/image-84.png' : '/image 85.png';
 
   return (
@@ -39,12 +39,12 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   const heightClass =
     size === 'sm'
-      ? 'h-8 sm:h-9'
+      ? 'h-5 sm:h-6'
       : size === 'lg'
-      ? 'h-12 sm:h-14 md:h-16 lg:h-[58px]'
-      : 'h-9 sm:h-10 md:h-12 lg:h-14 xl:h-[52px]';
+      ? 'h-8 sm:h-9 md:h-10'
+      : 'h-6 sm:h-7 md:h-8';
 
-  const src = theme === 'white' ? '/image 84.png' : '/image-85.png';
+  const src = theme === 'white' ? '/FIRST-global_white.png' : '/FIRST-global_black.png';
   const fallback = theme === 'white' ? '/image-84.png' : '/image 85.png';
 
   return (

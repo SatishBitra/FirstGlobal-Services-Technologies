@@ -84,7 +84,7 @@ export const RiseSection: React.FC<RiseSectionProps> = ({ onOpenEnquiry }) => {
               <img
                 src="/Rise logo.png"
                 alt="RISE® Brand Logo"
-                className="h-12 sm:h-16 md:h-20 w-auto max-w-[260px] object-contain drop-shadow-xs"
+                className="h-16 sm:h-18 md:h-20 w-auto max-w-[280px] sm:max-w-[320px] object-contain drop-shadow-xs"
               />
             </div>
           </ScrollReveal>
